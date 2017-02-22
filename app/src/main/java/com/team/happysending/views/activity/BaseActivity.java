@@ -16,7 +16,6 @@ import io.reactivex.subjects.PublishSubject;
 public abstract class BaseActivity extends AppCompatActivity {
     //得到生命周期，用于联网时，判断activity的生命状态
     public final PublishSubject<ActivityLifeCycleEvent> lifecycleSubject = PublishSubject.create();
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         lifecycleSubject.onNext(ActivityLifeCycleEvent.CREATE);

@@ -15,7 +15,6 @@ public class BasePresenter<T extends BaseView> {
     }
     public void setThisView(T thisView){
         someView = thisView;
-        someView.initView();
     }
 
 }

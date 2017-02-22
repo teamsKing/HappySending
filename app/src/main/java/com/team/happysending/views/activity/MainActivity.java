@@ -5,6 +5,7 @@ import android.widget.TextView;
 import com.team.happysending.R;
 import com.team.happysending.model.bean.ResultsBean;
 import com.team.happysending.presenter.MainPresenter;
+import com.team.happysending.utils.L;
 import com.team.happysending.utils.ToastUtils;
 import com.team.happysending.views.interfaces.MainView;
 
@@ -13,8 +14,10 @@ import java.util.List;
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity implements MainView {
+    private final String TAG = L.createTag(this);
     @BindView(R.id.txt)
     TextView mTxt;
+    //chushihua
     private MainPresenter mPresenter;
 
 
