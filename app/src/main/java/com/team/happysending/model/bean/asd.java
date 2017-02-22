@@ -5,4 +5,5 @@ package com.team.happysending.model.bean;
  */
 
 public class asd {
+    int i = 0;
 }
