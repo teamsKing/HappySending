@@ -21,9 +21,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         lifecycleSubject.onNext(ActivityLifeCycleEvent.CREATE);
         super.onCreate(savedInstanceState);
+        //添加布局
         setContentView(getLayout());
+        //注册butterknife
         ButterKnife.bind(this);
+        //实例化P
         initPresenter();
+        //初始化数据
         initData();
     }
 
