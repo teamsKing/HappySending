@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.team.happysending.R;
 
+
 /**
  * Created by zhang_shuai on 2017/2/23
  *
@@ -17,13 +18,10 @@ import com.team.happysending.R;
 
 public class OrdersFragment extends Fragment {
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_orders,container,false);
-
-        return view;
-
+        return inflater.inflate(R.layout.fragment_orders,container,false);
     }
 }
