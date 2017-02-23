@@ -5,8 +5,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:name=".views.app.MyApplication"
-        tools:replace="android:name,android:allowBackup,android:icon,android:label,android:roundIcon,android:supportsRtl,android:theme"
        android:name=".views.app.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
