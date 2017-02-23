@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:divider="@drawable/dividerline"
+              android:orientation="vertical"
+              android:showDividers="middle">
+
+    <com.bigkoo.convenientbanner.view.CBLoopViewPager
+        android:id="@+id/cblViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        app:canLoop="true"
+    />
+    <TextView
+        style="@style/textItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7.5"
+
+        android:gravity="center_vertical"
+        android:background="@color/grey_200"
+        android:drawableLeft="@mipmap/login_qqlogin"
+        android:padding="10dp"
+        android:text="发布任务"
+    />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_weight="7.5"
+        android:gravity="center_vertical"
+    >
+
+        <TextView
+            android:id="@+id/fragmentsend_txt1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/kuaidibiaoqian_lvse"
+            android:gravity="center"
+            android:text="@string/fa"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+        />
+        <TextView
+            android:id="@+id/textView"
+            style="@style/textItem"
+            android:layout_alignBaseline="@+id/fragmentsend_txt1"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/fragmentsend_txt1"
+            android:text="@string/startAddress"/>
+
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_alignParentRight="true"
+                   android:layout_centerVertical="true"
+                   android:layout_marginEnd="17dp"
+                   android:layout_marginRight="17dp"
+                   android:src="@mipmap/arrow_right"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_weight="7.5"
+        android:gravity="center_vertical"
+    >
+        <TextView
+            android:id="@+id/fragmentsend_txt2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/main_orders"
+            android:gravity="center"
+            android:text="@string/jie"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+        />
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/textItem"
+            android:layout_alignBaseline="@+id/fragmentsend_txt2"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/fragmentsend_txt2"
+            android:text="@string/finishAddress"/>
+
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_alignParentRight="true"
+                   android:layout_centerVertical="true"
+                   android:layout_marginEnd="17dp"
+                   android:layout_marginRight="17dp"
+                   android:src="@mipmap/arrow_right"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_weight="7"
+    >
+        <TextView
+            android:id="@+id/fragmentsend_txt3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:background="@mipmap/kuaidibiaoqian"
+            android:gravity="center"
+            android:text="@string/qu"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+        />
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/textItem"
+            android:layout_alignBaseline="@+id/fragmentsend_txt3"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/fragmentsend_txt3"
+            android:text="@string/quhuoTime"/>
+
+        <TextView
+            android:id="@+id/fragmentsend_txt32"
+            style="@style/textItem"
+            android:layout_above="@+id/textView4"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="@string/lookJinZhi"
+            android:textColor="@color/black"
+            android:textSize="13sp"/>
+
+        <TextView android:id="@+id/textView4"
+                  style="@style/textItem"
+                  android:layout_alignBaseline="@+id/fragmentsend_txt3"
+                  android:layout_marginRight="20dp"
+                  android:layout_toLeftOf="@+id/fragmentsend_img3"
+                  android:text="@string/quhuo"
+                  android:textColor="@color/gray"/>
+
+        <ImageView
+            android:id="@+id/fragmentsend_img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/fragmentsend_txt32"
+            android:src="@mipmap/arrow_right"/>
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:layout_weight="7"
+        android:background="@color/darkorange"
+        android:text="@string/fragmentsendBtnTxt"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+    />
+
+</LinearLayout>
