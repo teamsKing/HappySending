@@ -103,8 +103,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     protected void initData() {
-        //网络请求
-        mPresenter.getDatasFromNet();
+
     }
 
 

@@ -10,221 +10,222 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@mipmap/dialog_btn_right"
-            android:text="接单"
             android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="#fff"/>
+            android:text="接单"
+            android:textColor="#fff"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/orders_yuying"
         android:layout_width="match_parent"
-        android:layout_below="@+id/ll"
         android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/ll"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:drawableLeft="@mipmap/yuyin"
-        />
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:drawableLeft="@mipmap/yuyin" />
+
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/itemBgk"
         android:layout_below="@+id/orders_yuying"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/itemBgk"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            >
+            android:layout_marginRight="10dp">
+
             <TextView
                 android:id="@+id/tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@mipmap/main_orders"
                 android:layout_marginTop="5dp"
+                android:background="@mipmap/main_orders"
+                android:gravity="center"
                 android:text="送"
-                android:textColor="#fff"
-                android:gravity="center"/>
+                android:textColor="#fff" />
 
             <TextView
                 android:id="@+id/orders_leibian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="物品类别"
-                android:layout_toRightOf="@+id/tv1"
-                android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                />
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv1"
+                android:text="物品类别" />
 
             <TextView
                 android:id="@+id/jiage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="已加价"
-                android:textColor="#CC1D1D"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="50dp"
-                android:layout_centerVertical="true"/>
+                android:text="已加价"
+                android:textColor="#CC1D1D" />
+
             <TextView
                 android:id="@+id/orders_jiage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="￥11.00"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                />
+                android:text="￥11.00" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@mipmap/main_orders"
                 android:layout_marginTop="5dp"
-                android:text="我"
-                android:textColor="#fff"
+                android:background="@mipmap/main_orders"
                 android:gravity="center"
-                />
+                android:text="我"
+                android:textColor="#fff" />
+
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
-                android:textColor="#fff"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv2"
-                />
+                android:background="@drawable/u37_line"
+                android:textColor="#fff" />
+
             <TextView
                 android:id="@+id/orders_wo_fa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="约2KM"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/tv3"
-                />
+                android:text="约2KM" />
+
             <TextView
                 android:id="@+id/tv5"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/orders_wo_fa"
-                />
+                android:background="@drawable/u37_line" />
+
             <TextView
                 android:id="@+id/tv4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@mipmap/kuaidibiaoqian_lvse"
-                android:layout_marginTop="5dp"
-                android:text="发"
-                android:textColor="#fff"
-                android:gravity="center"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv5"
-                />
+                android:background="@mipmap/kuaidibiaoqian_lvse"
+                android:gravity="center"
+                android:text="发"
+                android:textColor="#fff" />
 
             <TextView
                 android:id="@+id/tv6"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv4"
-                />
+                android:background="@drawable/u37_line" />
+
             <TextView
                 android:id="@+id/orders_fa_shou"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="约10KM"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/tv6"
-                />
+                android:text="约10KM" />
+
             <TextView
                 android:id="@+id/tv7"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/orders_fa_shou"
-                />
+                android:background="@drawable/u37_line" />
+
             <TextView
                 android:id="@+id/tv8"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@mipmap/kuaidibiaoqian"
-                android:layout_marginTop="5dp"
-                android:text="收"
-                android:textColor="#fff"
-                android:gravity="center"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv7"
-                />
+                android:background="@mipmap/kuaidibiaoqian"
+                android:gravity="center"
+                android:text="收"
+                android:textColor="#fff" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/qi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="起:"/>
+                android:text="起:" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="北京市海淀区"
-                android:layout_toRightOf="@+id/qi"/>
+                android:layout_toRightOf="@+id/qi"
+                android:hint="北京市海淀区" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/shi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="始:"/>
+                android:text="始:" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="北京市海淀区"
-                android:layout_toRightOf="@+id/shi"/>
+                android:layout_toRightOf="@+id/shi"
+                android:hint="北京市海淀区" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp">
 
             <TextView
@@ -232,24 +233,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/u53"
-                android:text="捎话"
-                android:textColor="#fff"
                 android:gravity="center"
-                />
+                android:text="捎话"
+                android:textColor="#fff" />
+
             <TextView
                 android:id="@+id/tv10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/u55"
                 android:layout_toRightOf="@+id/tv9"
-                android:gravity="center"/>
+                android:background="@drawable/u55"
+                android:gravity="center" />
+
             <TextView
                 android:id="@+id/orders_shuigou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="水果100斤"
                 android:layout_marginRight="200dp"
-                android:layout_toRightOf="@+id/tv10"/>
+                android:layout_toRightOf="@+id/tv10"
+                android:text="水果100斤" />
         </RelativeLayout>
 
 
@@ -260,37 +262,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll1"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:background="@mipmap/dialog_btn_right"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:textColor="#fff"
-        android:text="接单"/>
+        android:background="@mipmap/dialog_btn_right"
+        android:text="接单"
+        android:textColor="#fff" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:background="#fff"
-        android:layout_alignParentBottom="true">
+        android:orientation="horizontal">
+
         <ImageView
             android:id="@+id/orders_home"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:background="@mipmap/main_home_normal"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@mipmap/main_home_normal" />
+
         <ImageView
             android:id="@+id/orders_home_jiedan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/jiedan"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@mipmap/jiedan" />
+
         <ImageView
             android:id="@+id/orders_home_renwu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/jiedan"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@mipmap/jiedan" />
     </LinearLayout>
 </RelativeLayout>

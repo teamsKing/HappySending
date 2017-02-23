@@ -69,23 +69,6 @@
             android:layout_weight="1"
             android:background="@mipmap/bcq" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="2"
-            android:src="@drawable/receive_order" />
-
-        <Button
-            android:id="@+id/task"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_weight="1"
-            android:background="@mipmap/bcj" />
-    </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>
