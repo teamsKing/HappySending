@@ -13,10 +13,15 @@ import com.team.happysending.views.interfaces.HelpMeToHandInterface;
 
 public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> implements HelpMeToHandInterface {
 
+
     @Override
-    protected View initView() {
-        View view = View.inflate(mContext, R.layout.fragment_helpmehand, null);
-        return view;
+    protected void initView(View view) {
+
+    }
+
+    @Override
+    protected int getContentViewLayoutID() {
+        return R.layout.fragment_helpmehand;
     }
 
     @Override
@@ -24,10 +29,6 @@ public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> im
 
     }
 
-    @Override
-    protected void initUi() {
-
-    }
 
     @Override
     protected HelpMeToHandPresenter initPresenter() {

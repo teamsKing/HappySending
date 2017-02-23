@@ -21,8 +21,6 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     //上下文
     protected Context mContext;
-    //fragment所加载的视图
-    protected View mView;
     //对应的presenter对象
     protected T mPresenter;
 
@@ -36,41 +34,35 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView = initView();
-        return mView;
+        View view = inflater.inflate(getContentViewLayoutID(),null);
+        ButterKnife.bind(this, view);
+        initView(view);
+        return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //注册接口
-        BaseView baseInterface = initCallBack();
+
+
 
         mPresenter = initPresenter();
-
+        //注册接口
         if (mPresenter != null) {
-            mPresenter.setThisView(baseInterface);
+            mPresenter.setThisView(initCallBack());
         }
-        //注册butterknife
-        ButterKnife.bind(getActivity());
-        //初始化UI
-        initUi();
         //初始化数据
         initData();
     }
 
     //返回Fragment所加载的视图
-    protected abstract View initView();
+    protected abstract void initView(View view);
 
+    protected abstract int getContentViewLayoutID();
     //初始化数据
     protected abstract void initData();
-
-    //初始化UI
-    protected abstract void initUi();
-
     //返回所需要的presenter
     protected abstract T initPresenter();
-
     //返回接口的实现类对象 (子类中可直接返回this)
     protected abstract BaseView initCallBack();
 
