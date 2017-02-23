@@ -21,9 +21,9 @@
         android:layout_height="match_parent"
         android:layout_weight="7.5"
 
-        android:gravity="center_vertical"
         android:background="@color/grey_200"
         android:drawableLeft="@mipmap/login_qqlogin"
+        android:gravity="center_vertical"
         android:padding="10dp"
         android:text="发布任务"
     />
@@ -98,6 +98,7 @@
                    android:src="@mipmap/arrow_right"/>
 
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -129,7 +130,7 @@
             style="@style/textItem"
             android:layout_above="@+id/textView4"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="15dp"
             android:text="@string/lookJinZhi"
             android:textColor="@color/black"
             android:textSize="13sp"/>
@@ -146,10 +147,10 @@
             android:id="@+id/fragmentsend_img3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
             android:layout_below="@+id/fragmentsend_txt32"
+            android:layout_marginRight="16dp"
             android:src="@mipmap/arrow_right"/>
     </RelativeLayout>
     <Button
