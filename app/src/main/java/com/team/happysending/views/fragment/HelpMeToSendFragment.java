@@ -2,7 +2,7 @@ package com.team.happysending.views.fragment;
 
 import android.view.View;
 
-
+import com.team.happysending.R;
 import com.team.happysending.presenter.HelpMeToSendPresenter;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.HelpMeToSendInterface;
