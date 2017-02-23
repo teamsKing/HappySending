@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">HappySending</string>
+    <string name="startAddress">开始地址</string>
+    <string name="finishAddress">结束地址</string>
+    <string name="quhuoTime">取货时间</string>
+    <string name="quhuo">立即取货</string>
+    <string name="fragmentsendBtnTxt">立即下单</string>
+    <string name="lookJinZhi">查看《禁止发布的事项信息》</string>
+    <string name="fragmentRenShu">周围有5位自由快递人等候为您服务</string>
+    <string name="fa">发</string>
+    <string name="jie">结</string>
+    <string name="qu">取</string>
 </resources>
