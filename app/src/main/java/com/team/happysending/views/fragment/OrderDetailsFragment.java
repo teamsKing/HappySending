@@ -11,17 +11,16 @@ import com.team.happysending.R;
 
 /**
  * Created by zhang_shuai on 2017/2/23
- *
- *  接单界面
+ * 订单详情界面
  */
 
-public class OrdersFragment extends Fragment {
+public class OrderDetailsFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_orders,container,false);
+        View view = inflater.inflate(R.layout.fragment_order_details,container,false);
 
         return view;
 
