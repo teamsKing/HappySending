@@ -6,6 +6,9 @@ import android.os.Message;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.team.happysending.R;
+import com.team.happysending.presenter.GuidePresenter;
+import com.team.happysending.views.interfaces.BaseView;
+import com.team.happysending.views.interfaces.GuideView;
 
 import java.lang.ref.WeakReference;
 
@@ -13,25 +16,27 @@ import java.lang.ref.WeakReference;
  * Created by 樊、先生 on 2017/2/22.
  */
 
-public class GuideActivity extends BaseActivity {
+public class GuideActivity extends BaseActivity<GuidePresenter> implements GuideView {
 
     /**
      * 创建静态内部类
      */
-    private static class MyHandler extends Handler{
+    private static class MyHandler extends Handler {
         //持有弱引用HandlerActivity,GC回收时会被回收掉.
         private final WeakReference<GuideActivity> mActivty;
-        public MyHandler(GuideActivity activity){
-            mActivty =new WeakReference<GuideActivity>(activity);
+
+        public MyHandler(GuideActivity activity) {
+            mActivty = new WeakReference<GuideActivity>(activity);
         }
+
         @Override
         public void handleMessage(Message msg) {
-            GuideActivity activity=mActivty.get();
+            GuideActivity activity = mActivty.get();
             super.handleMessage(msg);
-            if(activity!=null){
-                if (msg.what == 0){
+            if (activity != null) {
+                if (msg.what == 0) {
                     //跳转到主页面
-                    Intent intent = new Intent(activity,MainActivity.class);
+                    Intent intent = new Intent(activity, MainActivity.class);
                     activity.startActivity(intent);
                     activity.finish();
                 }
@@ -46,8 +51,18 @@ public class GuideActivity extends BaseActivity {
     }
 
     @Override
-    protected void initPresenter() {
+    protected GuidePresenter initPresenter() {
+        return new GuidePresenter(this);
+    }
 
+    @Override
+    protected void addActivity() {
+        application.addActivity(this);
+    }
+
+    @Override
+    protected BaseView initCallBack() {
+        return this;
     }
 
     @Override
@@ -57,8 +72,8 @@ public class GuideActivity extends BaseActivity {
         //设置动画资源
         animationView.setAnimation("PinJump.json");
         animationView.playAnimation();
-        MyHandler myHandler=new MyHandler(this);
+        MyHandler myHandler = new MyHandler(this);
         //延迟五秒
-        myHandler.sendEmptyMessageDelayed(0,5000);
+        myHandler.sendEmptyMessageDelayed(0, 5000);
     }
 }

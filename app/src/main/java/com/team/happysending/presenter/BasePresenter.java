@@ -1,6 +1,7 @@
 package com.team.happysending.presenter;
 
 
+import com.team.happysending.model.net.HttpUtils;
 import com.team.happysending.views.interfaces.BaseView;
 
 /**
@@ -8,13 +9,24 @@ import com.team.happysending.views.interfaces.BaseView;
  * P层基类
  */
 
-public class BasePresenter<T extends BaseView> {
+public abstract class BasePresenter<T extends BaseView> {
+    //定义回调接口的引用
     private T someView;
-    public T getThisView(){
+
+    protected HttpUtils mHttpRequest;
+
+    {
+        mHttpRequest = HttpUtils.getInstances();
+    }
+
+    //返回接口的实现类对象
+    public T getThisView() {
         return someView;
     }
-    public void setThisView(T thisView){
-        someView = thisView;
+
+    //注册接口
+    public void setThisView(T thisView) {
+        this.someView = thisView;
     }
 
 }

@@ -54,7 +54,7 @@ public class NetClient {
                 HttpUrl.Builder authorizedUrlBuilder = request.url()
                         .newBuilder()
                         //添加统一参数 如手机唯一标识符,token等
-                        .addQueryParameter("key1","value1")
+                        .addQueryParameter("key1", "value1")
                         .addQueryParameter("key2", "value2");
 
                 Request newRequest = request.newBuilder()
@@ -66,7 +66,7 @@ public class NetClient {
 
 //                    okhttp3.Response originalResponse = chain.proceed(request);
 //                    return originalResponse.newBuilder().header("mobileFlag", "adfsaeefe").addHeader("type", "4").build();
-                return  chain.proceed(newRequest);
+                return chain.proceed(newRequest);
             }
         });
 

@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.team.happysending.model.bean.BaseBean;
 import com.team.happysending.model.bean.ResultsBean;
-import com.team.happysending.model.net.HttpUtils;
 import com.team.happysending.model.net.NetClient;
 import com.team.happysending.model.net.ProgressObserver;
 import com.team.happysending.views.interfaces.MainView;
@@ -25,13 +24,14 @@ public class MainPresenter extends BasePresenter<MainView> {
     public MainPresenter(Context context) {
         mContext = context;
     }
+
     //测试
     public void getDatasFromNet() {
         Observable<BaseBean<List<ResultsBean>>> androidInfo = NetClient.getApiRetrofitInstance().getAndroidInfo();
-        HttpUtils.toSubscibers(androidInfo, new ProgressObserver<List<ResultsBean>>(mContext) {
+        mHttpRequest.toSubscibers(androidInfo, new ProgressObserver<List<ResultsBean>>(mContext) {
             @Override
             public void onSuccess(List<ResultsBean> resultsBeen) {
-                getThisView().onSuccess(resultsBeen);
+
             }
         });
     }
