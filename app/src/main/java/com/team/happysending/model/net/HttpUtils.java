@@ -13,9 +13,26 @@ import io.reactivex.schedulers.Schedulers;
  */
 //, String cacheKey, boolean isSave
 public class HttpUtils {
-    public static <T> void toSubscibers(Observable<BaseBean<T>> observable, ProgressObserver<T> ober){
 
-        observable. subscribeOn(Schedulers.io())
+    private static HttpUtils mHttpRequest;
+
+    private HttpUtils() {
+    }
+
+    public static HttpUtils getInstances() {
+        if (mHttpRequest == null) {
+            synchronized (HttpUtils.class) {
+                if (mHttpRequest == null) {
+                    mHttpRequest = new HttpUtils();
+                }
+            }
+        }
+        return mHttpRequest;
+    }
+
+    public static <T> void toSubscibers(Observable<BaseBean<T>> observable, ProgressObserver<T> ober) {
+
+        observable.subscribeOn(Schedulers.io())
                 .map(new Function<BaseBean<T>, T>() {
                     @Override
                     public T apply(BaseBean<T> tBaseBean) throws Exception {
