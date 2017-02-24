@@ -13,7 +13,7 @@ import com.team.happysending.presenter.MainPresenter;
 import com.team.happysending.views.adapter.Main_tab_Adapter;
 import com.team.happysending.views.fragment.HelpMeToBuyFragment;
 import com.team.happysending.views.fragment.HelpMeToHandFragment;
-import com.team.happysending.views.fragment.HelpMeToSendFragment;
+import com.team.happysending.views.fragment.SendFragment;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.MainView;
 
@@ -27,9 +27,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     private Main_tab_Adapter fAdapter; //定义adapter
     private List<Fragment> list_fragment; //定义要装fragment的列表
     private List<String> list_title; //tab名称列表
-    private HelpMeToSendFragment mHelpMeToSend; //帮我送fragment
+   // private HelpMeToSendFragment mHelpMeToSend; //帮我送fragment
     private HelpMeToBuyFragment mHelpMeToBuy; //帮我买fragment
     private HelpMeToHandFragment mHelpMeToHand; //帮我忙fragment
+    private SendFragment mSendFragment;
 
 
     @Override
@@ -47,12 +48,13 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         tab_FindFragment_title = (TabLayout) findViewById(R.id.tab_FindFragment_title);
         vp_FindFragment_pager = (ViewPager) findViewById(R.id.vp_FindFragment_pager);
         //初始化各fragment
-        mHelpMeToSend = new HelpMeToSendFragment();
+        mSendFragment = new SendFragment();
+       // mHelpMeToSend = new HelpMeToSendFragment();
         mHelpMeToBuy = new HelpMeToBuyFragment();
         mHelpMeToHand = new HelpMeToHandFragment();
         //将fragment装进列表中
         list_fragment = new ArrayList<>();
-        list_fragment.add(mHelpMeToSend);
+        list_fragment.add(mSendFragment);
         list_fragment.add(mHelpMeToBuy);
         list_fragment.add(mHelpMeToHand);
         //将名称加载tab名字列表，正常情况下，我们应该在values/arrays.xml中进行定义然后调用
@@ -87,13 +89,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         return R.layout.activity_main;
     }
 
-    /**
-     * 初始化P
-     */
     @Override
     protected MainPresenter initPresenter() {
         return new MainPresenter(this);
     }
+
 
     @Override
     protected void addActivity() {

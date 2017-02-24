@@ -5,5 +5,5 @@ package com.team.happysending.views.interfaces;
  */
 
 public interface BaseView {
-
+  //void initView();
 }
