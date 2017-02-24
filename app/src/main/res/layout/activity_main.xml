@@ -116,6 +116,7 @@
             android:background="@drawable/customyuan">
 
             <ImageView
+                android:id="@+id/jie"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_centerInParent="true"
@@ -124,6 +125,7 @@
 
 
         <Button
+            android:id="@+id/renwu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

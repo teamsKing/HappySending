@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.team.happysending.R;
 import com.team.happysending.presenter.MainPresenter;
@@ -17,14 +18,14 @@ import com.team.happysending.utils.Constant;
 import com.team.happysending.views.adapter.Main_tab_Adapter;
 import com.team.happysending.views.fragment.HelpMeToBuyFragment;
 import com.team.happysending.views.fragment.HelpMeToHandFragment;
-import com.team.happysending.views.fragment.SendFragment;
+import com.team.happysending.views.fragment.HelpMeToSendFragment;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.MainView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity<MainPresenter> implements MainView, View.OnClickListener {
+public class MainActivity extends BaseActivity<MainPresenter> implements MainView,View.OnClickListener {
 
     private TabLayout tab_FindFragment_title; //定义TabLayout
     private ViewPager vp_FindFragment_pager; //定义viewPager
@@ -66,13 +67,15 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         image = (ImageView) findViewById(R.id.btn_right);
         tab_FindFragment_title = (TabLayout) findViewById(R.id.tab_FindFragment_title);
         vp_FindFragment_pager = (ViewPager) findViewById(R.id.vp_FindFragment_pager);
+        findViewById(R.id.renwu).setOnClickListener(this);
+        findViewById(R.id.jie).setOnClickListener(this);
         //初始化各fragment
         mSendFragment = new SendFragment();
         mHelpMeToBuy = new HelpMeToBuyFragment();
         mHelpMeToHand = new HelpMeToHandFragment();
         //将fragment装进列表中
         list_fragment = new ArrayList<>();
-        list_fragment.add(mSendFragment);
+        list_fragment.add(mHelpMeToSend);
         list_fragment.add(mHelpMeToBuy);
         list_fragment.add(mHelpMeToHand);
         //将名称加载tab名字列表，正常情况下，我们应该在values/arrays.xml中进行定义然后调用
@@ -94,6 +97,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     }
 
 
+
     /**
      * 绑定xml布局
      *
@@ -104,11 +108,13 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         return R.layout.activity_main;
     }
 
+    /**
+     * 初始化P
+     */
     @Override
     protected MainPresenter initPresenter() {
         return new MainPresenter();
     }
-
 
     @Override
     protected void addActivity() {
@@ -134,8 +140,17 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
                 startActivity(intent);
                 break;
             case R.id.text_btn:
+                Toast.makeText(this,"登陆",Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(this, LoginActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.jie:
+                Toast.makeText(this,"登陆",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,OrdersActivity.class));
+                break;
+            case R.id.renwu:
+                Toast.makeText(this,"rewu",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,HistoryActivity.class));
                 break;
 
         }

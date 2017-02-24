@@ -18,6 +18,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
 }
 
 dependencies {
@@ -62,4 +68,8 @@ dependencies {
     //页面遮罩
     compile 'net.fredericosilva:showTipsView:1.0.4'
     compile 'com.android.support:design:25.2.0'
+    compile files('libs/AMap_Location_V3.3.0_20170118.jar')
+    compile files('libs/AMap_Search_V4.0.0_20170111.jar')
+    compile files('libs/android-support-v4.jar')
+    compile files('libs/Android_Map3D_SDK_V4.1.3_20161208.jar')
 }
