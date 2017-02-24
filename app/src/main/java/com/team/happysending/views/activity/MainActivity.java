@@ -1,10 +1,12 @@
 package com.team.happysending.views.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.team.happysending.R;
 import com.team.happysending.presenter.MainPresenter;
@@ -18,7 +20,7 @@ import com.team.happysending.views.interfaces.MainView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity<MainPresenter> implements MainView {
+public class MainActivity extends BaseActivity<MainPresenter> implements MainView, View.OnClickListener {
 
     private TabLayout tab_FindFragment_title; //定义TabLayout
     private ViewPager vp_FindFragment_pager; //定义viewPager
@@ -39,6 +41,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     }
 
     private void initUI() {
+        findViewById(R.id.AddressSpinner).setOnClickListener(this);
+        findViewById(R.id.btn_right).setOnClickListener(this);
+        findViewById(R.id.text_btn).setOnClickListener(this);
         tab_FindFragment_title = (TabLayout) findViewById(R.id.tab_FindFragment_title);
         vp_FindFragment_pager = (ViewPager) findViewById(R.id.vp_FindFragment_pager);
         //初始化各fragment
@@ -69,7 +74,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     }
 
     private void initFragment() {
-
 
     }
 
@@ -107,4 +111,18 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.AddressSpinner:
+                Intent intent = new Intent(this, AddressChoseActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.text_btn:
+                Intent intent1 = new Intent(this, LoginActivity.class);
+                startActivity(intent1);
+                break;
+
+        }
+    }
 }
