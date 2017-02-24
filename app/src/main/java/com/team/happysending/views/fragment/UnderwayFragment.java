@@ -3,17 +3,17 @@ package com.team.happysending.views.fragment;
 import android.view.View;
 
 import com.team.happysending.R;
-import com.team.happysending.presenter.HelpMeToHandPresenter;
+import com.team.happysending.presenter.UnderwayPresenter;
 import com.team.happysending.views.interfaces.BaseView;
-import com.team.happysending.views.interfaces.HelpMeToHandInterface;
+import com.team.happysending.views.interfaces.UnderwayView;
 
 /**
- * Created by zhaoshihao on 2017/2/23.
+ * Created by zhang_shuai on 2017/2/24
+ *
+ * 正在进行的任务
  */
 
-public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> implements HelpMeToHandInterface {
-
-
+public class UnderwayFragment  extends BaseFragment<UnderwayPresenter> implements UnderwayView{
     @Override
     protected void initView(View view) {
 
@@ -21,7 +21,7 @@ public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> im
 
     @Override
     protected int getContentViewLayoutID() {
-        return R.layout.fragment_helpmehand;
+        return R.layout.fragment_underway;
     }
 
     @Override
@@ -29,10 +29,9 @@ public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> im
 
     }
 
-
     @Override
-    protected HelpMeToHandPresenter initPresenter() {
-        return new HelpMeToHandPresenter();
+    protected UnderwayPresenter initPresenter() {
+        return new UnderwayPresenter();
     }
 
     @Override

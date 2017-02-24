@@ -3,17 +3,17 @@ package com.team.happysending.views.fragment;
 import android.view.View;
 
 import com.team.happysending.R;
-import com.team.happysending.presenter.HelpMeToHandPresenter;
+import com.team.happysending.presenter.TaskHistoryPresenter;
 import com.team.happysending.views.interfaces.BaseView;
-import com.team.happysending.views.interfaces.HelpMeToHandInterface;
+import com.team.happysending.views.interfaces.TaskHistoryView;
 
 /**
- * Created by zhaoshihao on 2017/2/23.
+ * Created by zhang_shuai on 2017/2/24
+ *
+ * 任务的历史记录
  */
 
-public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> implements HelpMeToHandInterface {
-
-
+public class TaskHistoryFragment extends BaseFragment<TaskHistoryPresenter> implements TaskHistoryView {
     @Override
     protected void initView(View view) {
 
@@ -21,7 +21,7 @@ public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> im
 
     @Override
     protected int getContentViewLayoutID() {
-        return R.layout.fragment_helpmehand;
+        return R.layout.fragment_task_history;
     }
 
     @Override
@@ -29,10 +29,9 @@ public class HelpMeToHandFragment extends BaseFragment<HelpMeToHandPresenter> im
 
     }
 
-
     @Override
-    protected HelpMeToHandPresenter initPresenter() {
-        return new HelpMeToHandPresenter();
+    protected TaskHistoryPresenter initPresenter() {
+        return new TaskHistoryPresenter();
     }
 
     @Override

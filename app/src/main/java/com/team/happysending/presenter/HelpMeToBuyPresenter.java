@@ -8,6 +8,6 @@ import com.team.happysending.views.interfaces.HelpMeToBuyInterface;
 
 public class HelpMeToBuyPresenter extends BasePresenter<HelpMeToBuyInterface> {
 
-    
+
 
 }
