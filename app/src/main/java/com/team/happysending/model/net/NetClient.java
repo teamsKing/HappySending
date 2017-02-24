@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetClient {
     //主网址
-    public static final String HOST = "http://gank.io/";
+    public static final String HOST = "http://169.254.0.89:8080/MyPaoT/";
     private static ApiService apiService;
     protected static final Object monitor = new Object();
     private static Retrofit retrofit;

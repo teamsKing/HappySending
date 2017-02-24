@@ -6,10 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.team.happysending.R;
 import com.team.happysending.presenter.MainPresenter;
+import com.team.happysending.utils.Constant;
 import com.team.happysending.views.adapter.Main_tab_Adapter;
 import com.team.happysending.views.fragment.HelpMeToBuyFragment;
 import com.team.happysending.views.fragment.HelpMeToHandFragment;
@@ -27,29 +31,43 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     private Main_tab_Adapter fAdapter; //定义adapter
     private List<Fragment> list_fragment; //定义要装fragment的列表
     private List<String> list_title; //tab名称列表
-   // private HelpMeToSendFragment mHelpMeToSend; //帮我送fragment
     private HelpMeToBuyFragment mHelpMeToBuy; //帮我买fragment
     private HelpMeToHandFragment mHelpMeToHand; //帮我忙fragment
-    private SendFragment mSendFragment;
+    private SendFragment mSendFragment;//帮我送fragment
+    private ImageView image;
+    private TextView logintext;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // initFragment();
         initUI();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String token = mSp.getString(Constant.LOGINTOKEN, "");
+        if (TextUtils.isEmpty(token)) {
+            image.setVisibility(View.GONE);
+            logintext.setVisibility(View.VISIBLE);
+        } else {
+            image.setVisibility(View.VISIBLE);
+            logintext.setVisibility(View.GONE);
+        }
     }
 
     private void initUI() {
         findViewById(R.id.AddressSpinner).setOnClickListener(this);
         findViewById(R.id.btn_right).setOnClickListener(this);
-        findViewById(R.id.text_btn).setOnClickListener(this);
+        logintext = (TextView) findViewById(R.id.text_btn);
+        logintext.setOnClickListener(this);
+        image = (ImageView) findViewById(R.id.btn_right);
         tab_FindFragment_title = (TabLayout) findViewById(R.id.tab_FindFragment_title);
         vp_FindFragment_pager = (ViewPager) findViewById(R.id.vp_FindFragment_pager);
         //初始化各fragment
         mSendFragment = new SendFragment();
-       // mHelpMeToSend = new HelpMeToSendFragment();
         mHelpMeToBuy = new HelpMeToBuyFragment();
         mHelpMeToHand = new HelpMeToHandFragment();
         //将fragment装进列表中
@@ -75,9 +93,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         tab_FindFragment_title.setupWithViewPager(vp_FindFragment_pager);
     }
 
-    private void initFragment() {
-
-    }
 
     /**
      * 绑定xml布局
@@ -91,7 +106,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     protected MainPresenter initPresenter() {
-        return new MainPresenter(this);
+        return new MainPresenter();
     }
 
 

@@ -5,26 +5,35 @@ package com.team.happysending.model.bean;
  * 基类
  */
 
-public  class BaseBean<T> {
-    //  判断标示
-    private boolean error;
+public class BaseBean<T> {
 
+
+    private String code;
+    private String message;
     //显示数据（用户需要关心的数据）
-    private T results;
+    private T userinfo;
 
-    public boolean isError() {
-        return error;
+    public String getCode() {
+        return code;
     }
 
-    public void setError(boolean error) {
-        this.error = error;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public T getResults() {
-        return results;
+    public String getMessage() {
+        return message;
     }
 
-    public void setResults(T results) {
-        this.results = results;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getUserinfo() {
+        return userinfo;
+    }
+
+    public void setUserinfo(T userinfo) {
+        this.userinfo = userinfo;
     }
 }

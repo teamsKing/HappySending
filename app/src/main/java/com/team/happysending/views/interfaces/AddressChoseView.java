@@ -5,4 +5,5 @@ package com.team.happysending.views.interfaces;
  */
 
 public interface AddressChoseView extends BaseView {
+
 }
