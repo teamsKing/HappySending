@@ -276,5 +276,34 @@
         android:textColor="#fff"
         android:text="接单"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/detail_homebtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:background="@mipmap/bcq" />
+
+        <ImageView
+            android:id="@+id/detail_home_jiedan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/receive_order" />
+
+        <Button
+            android:id="@+id/detail_home_renwu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@mipmap/bcj" />
+    </LinearLayout>
 
 </RelativeLayout>
