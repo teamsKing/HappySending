@@ -8,7 +8,7 @@
               android:orientation="vertical"
               android:showDividers="middle">
 
-    <com.bigkoo.convenientbanner.view.CBLoopViewPager
+    <com.bigkoo.convenientbanner.ConvenientBanner
         android:id="@+id/cblViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,14 +20,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="7.5"
-
-        android:gravity="center_vertical"
         android:background="@color/grey_200"
         android:drawableLeft="@mipmap/login_qqlogin"
+        android:gravity="center_vertical"
         android:padding="10dp"
         android:text="发布任务"
     />
     <RelativeLayout
+        android:id="@+id/send_start"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
@@ -64,6 +64,7 @@
 
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/stop_start"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
@@ -98,7 +99,9 @@
                    android:src="@mipmap/arrow_right"/>
 
     </RelativeLayout>
+
     <RelativeLayout
+        android:id="@+id/get_time"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
@@ -127,12 +130,12 @@
         <TextView
             android:id="@+id/fragmentsend_txt32"
             style="@style/textItem"
-            android:layout_above="@+id/textView4"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
             android:text="@string/lookJinZhi"
-            android:textColor="@color/black"
-            android:textSize="13sp"/>
+            android:textColor="@color/red"
+            android:textSize="13sp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/fragmentsend_img3"
+            android:layout_toStartOf="@+id/fragmentsend_img3"/>
 
         <TextView android:id="@+id/textView4"
                   style="@style/textItem"
@@ -146,13 +149,14 @@
             android:id="@+id/fragmentsend_img3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
             android:layout_below="@+id/fragmentsend_txt32"
+            android:layout_marginRight="16dp"
             android:src="@mipmap/arrow_right"/>
     </RelativeLayout>
     <Button
+        android:id="@+id/send_btn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"

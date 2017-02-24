@@ -11,11 +11,16 @@ import com.team.happysending.views.interfaces.HelpMeToBuyInterface;
  */
 
 public class HelpMeToBuyFragment extends BaseFragment<HelpMeToBuyPresenter> implements HelpMeToBuyInterface {
-    @Override
-    protected View initView() {
-        View view = View.inflate(mContext, R.layout.fragment_helpmebuy, null);
-        return view;
 
+
+    @Override
+    protected void initView(View view) {
+
+    }
+
+    @Override
+    protected int getContentViewLayoutID() {
+        return R.layout.fragment_helpmebuy;
     }
 
     @Override
@@ -23,10 +28,6 @@ public class HelpMeToBuyFragment extends BaseFragment<HelpMeToBuyPresenter> impl
 
     }
 
-    @Override
-    protected void initUi() {
-
-    }
 
     @Override
     protected HelpMeToBuyPresenter initPresenter() {

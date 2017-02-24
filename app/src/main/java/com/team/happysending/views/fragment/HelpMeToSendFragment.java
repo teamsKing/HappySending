@@ -14,9 +14,13 @@ import com.team.happysending.views.interfaces.HelpMeToSendInterface;
 public class HelpMeToSendFragment extends BaseFragment<HelpMeToSendPresenter> implements HelpMeToSendInterface {
 
     @Override
-    protected View initView() {
-        View view = View.inflate(mContext, R.layout.fragment_helpmesend, null);
-        return view;
+    protected void initView(View view) {
+
+    }
+
+    @Override
+    protected int getContentViewLayoutID() {
+        return R.layout.fragment_helpmesend;
     }
 
     @Override
@@ -24,10 +28,7 @@ public class HelpMeToSendFragment extends BaseFragment<HelpMeToSendPresenter> im
 
     }
 
-    @Override
-    protected void initUi() {
 
-    }
 
     @Override
     protected HelpMeToSendPresenter initPresenter() {

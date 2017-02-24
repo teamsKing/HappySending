@@ -1,6 +1,6 @@
 package com.team.happysending.views.activity;
 
-import android.os.Bundle;
+ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -106,4 +106,19 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     }
 
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.AddressSpinner:
+                Intent intent = new Intent(this, AddressChoseActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.text_btn:
+                Intent intent1 = new Intent(this, LoginActivity.class);
+                startActivity(intent1);
+                break;
+
+        }
+    }
 }
