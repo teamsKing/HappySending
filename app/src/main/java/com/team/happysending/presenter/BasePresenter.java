@@ -11,7 +11,7 @@ import com.team.happysending.views.interfaces.BaseView;
 
 public abstract class BasePresenter<T extends BaseView> {
     //定义回调接口的引用
-    private T someView;
+    protected T someView;
 
     protected HttpUtils mHttpRequest;
 

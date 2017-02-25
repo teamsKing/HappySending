@@ -3,16 +3,17 @@ package com.team.happysending.views.fragment;
 import android.view.View;
 
 import com.team.happysending.R;
-import com.team.happysending.presenter.HelpMeToSendPresenter;
+import com.team.happysending.presenter.TaskHistoryPresenter;
 import com.team.happysending.views.interfaces.BaseView;
-import com.team.happysending.views.interfaces.HelpMeToSendInterface;
+import com.team.happysending.views.interfaces.TaskHistoryView;
 
 /**
- * Created by zhaoshihao on 2017/2/23.
+ * Created by zhang_shuai on 2017/2/24
+ *
+ * 任务的历史记录
  */
 
-public class HelpMeToSendFragment extends BaseFragment<HelpMeToSendPresenter> implements HelpMeToSendInterface {
-
+public class TaskHistoryFragment extends BaseFragment<TaskHistoryPresenter> implements TaskHistoryView {
     @Override
     protected void initView(View view) {
 
@@ -20,7 +21,7 @@ public class HelpMeToSendFragment extends BaseFragment<HelpMeToSendPresenter> im
 
     @Override
     protected int getContentViewLayoutID() {
-        return R.layout.fragment_helpmesend;
+        return R.layout.fragment_task_history;
     }
 
     @Override
@@ -28,11 +29,9 @@ public class HelpMeToSendFragment extends BaseFragment<HelpMeToSendPresenter> im
 
     }
 
-
-
     @Override
-    protected HelpMeToSendPresenter initPresenter() {
-        return new HelpMeToSendPresenter();
+    protected TaskHistoryPresenter initPresenter() {
+        return new TaskHistoryPresenter();
     }
 
     @Override

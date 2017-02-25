@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@mipmap/dialog_btn_right"
-            android:text="接单"
+            android:text="订单详情"
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="#fff"/>
@@ -35,11 +35,12 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:text="发货地址:"/>
-        <EditText
+        <TextView
             android:id="@+id/detaild_shuqi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="北京市海淀区"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/detaild_qi"/>
     </RelativeLayout>
 
@@ -60,12 +61,12 @@
             android:layout_marginLeft="10dp"
             android:text="收货地址:"/>
 
-        <EditText
+        <TextView
             android:id="@+id/detaild_shushi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="北京市海淀区"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/detaild_shi"
              />
     </RelativeLayout>
@@ -202,7 +203,7 @@
                 android:background="@drawable/u55"
                 android:layout_toRightOf="@+id/tv9"
                 android:gravity="center"/>
-            <EditText
+            <TextView
                 android:id="@+id/detail_shuigou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -241,7 +242,7 @@
             android:id="@+id/detail_shui"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:layout_toRightOf="@+id/tv12"
             android:hint="水果"/>
 
@@ -259,7 +260,7 @@
             android:layout_height="wrap_content"
             android:text="￥12.00元"
             android:textColor="#ec0f38"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="65dp"
             android:layout_toRightOf="@+id/fei"
             />
     </RelativeLayout>
@@ -276,5 +277,34 @@
         android:textColor="#fff"
         android:text="接单"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/detail_homebtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:background="@mipmap/bcq" />
+
+        <ImageView
+            android:id="@+id/detail_home_jiedan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/receive_order" />
+
+        <Button
+            android:id="@+id/detail_home_renwu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@mipmap/bcj" />
+    </LinearLayout>
 
 </RelativeLayout>
