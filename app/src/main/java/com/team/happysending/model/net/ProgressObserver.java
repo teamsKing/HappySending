@@ -17,7 +17,7 @@ import io.reactivex.disposables.Disposable;
  * 自定义观察者
  */
 
-public abstract class ProgressObserver<T> implements Observer<T> ,ProgressCancelListener{
+public abstract class ProgressObserver<T> implements Observer<T>, ProgressCancelListener {
     /**
      * 声明AlertDialog对象
      */
@@ -27,17 +27,19 @@ public abstract class ProgressObserver<T> implements Observer<T> ,ProgressCancel
 
     /**
      * 在构造函数中实例化AlertDialog
+     *
      * @param context
      */
     public ProgressObserver(Context context) {
         mContext = context;
-        mAlertDialog = new SweetAlertDialog(context,SweetAlertDialog.PROGRESS_TYPE);
+        mAlertDialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
         mAlertDialog.setTitleText("Loading...");
 
     }
 
     /**
      * 开始时显示Dialog
+     *
      * @param d
      */
     @Override
@@ -53,8 +55,8 @@ public abstract class ProgressObserver<T> implements Observer<T> ,ProgressCancel
     @Override
     public void onError(Throwable e) {
 
-        String error= "";
-        if(e instanceof ApiException){
+        String error = "";
+        if (e instanceof ApiException) {
             error = e.getMessage();
         } else if ((e instanceof UnknownHostException)) {
             error = "网络异常";
@@ -64,7 +66,7 @@ public abstract class ProgressObserver<T> implements Observer<T> ,ProgressCancel
             error = "连接超时";
         } else if (e instanceof ConnectException) {
             error = "连接服务器失败";
-        }else{
+        } else {
             error = "未知异常";
         }
         mErrorDialog = new SweetAlertDialog(mContext, SweetAlertDialog.ERROR_TYPE);
@@ -72,7 +74,7 @@ public abstract class ProgressObserver<T> implements Observer<T> ,ProgressCancel
                 .setContentText(error)
                 .show();
 
-        if(mAlertDialog != null){
+        if (mAlertDialog != null) {
             mAlertDialog.cancel();
         }
     }
@@ -83,7 +85,7 @@ public abstract class ProgressObserver<T> implements Observer<T> ,ProgressCancel
     @Override
     public void onComplete() {
         dismissProgressDialog();
-        if (mErrorDialog != null ) {
+        if (mErrorDialog != null) {
             mErrorDialog.cancel();
         }
     }
@@ -91,21 +93,22 @@ public abstract class ProgressObserver<T> implements Observer<T> ,ProgressCancel
     /**
      * 显示Dialog
      */
-    public void showProgressDialog(){
+    public void showProgressDialog() {
         if (mAlertDialog != null) {
             mAlertDialog.show();
         }
     }
+
     /**
      * 取消提示窗
      */
-    protected void dismissProgressDialog(){
+    protected void dismissProgressDialog() {
         if (mAlertDialog != null) {
-//            dialogHandler.obtainMessage(SimpleLoadDialog.DISMISS_PROGRESS_DIALOG).sendToTarget();
-           mAlertDialog.dismiss();
-          //  mAlertDialog=null;
+            mAlertDialog.dismiss();
         }
-    };
+    }
+
+    ;
 
     public abstract void onSuccess(T t);
 

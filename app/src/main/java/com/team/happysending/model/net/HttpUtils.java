@@ -36,11 +36,13 @@ public class HttpUtils {
                 .map(new Function<BaseBean<T>, T>() {
                     @Override
                     public T apply(BaseBean<T> tBaseBean) throws Exception {
-                        return tBaseBean.getResults();
+                        if (!tBaseBean.getCode().equals("07000")) {
+                            throw new ApiException(tBaseBean.getMessage());  //抛出自定义异常
+                        }
+                        return tBaseBean.getUserinfo();
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(ober);
-        //RetrofitCache.load(cacheKey,observable,isSave);
     }
 }
