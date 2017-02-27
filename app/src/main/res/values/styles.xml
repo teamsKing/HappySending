@@ -20,4 +20,6 @@
         <item name="android:windowExitAnimation">@anim/pop_push_down_out</item>
     </style>
 
+
+
 </resources>

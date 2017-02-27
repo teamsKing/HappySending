@@ -26,6 +26,11 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <!--录音-->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 读取联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 拨打电话权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:name=".views.app.MyApplication"
         android:allowBackup="true"
@@ -50,7 +55,19 @@
         <activity android:name=".views.activity.OrderDetailsActivity"></activity>
         <activity android:name=".views.activity.HistoryActivity"></activity>
         <activity android:name=".views.activity.ReGeocoderActivity"/>
-        <activity android:name=".views.activity.PlaceAnOrderActivity"></activity>
+
+        <activity android:name=".views.activity.PlaceAnOrderActivity">
+
+
+        </activity>
+
+        <activity android:name=".views.activity.ContactsActivity">
+
+        </activity>
+        <activity android:name=".views.activity.RenZhengActivity">
+
+
+        </activity>
 
 
         <meta-data android:name="com.amap.api.v2.apikey" android:value="3715621aad5ee32b3f3e122bea3edd5d">

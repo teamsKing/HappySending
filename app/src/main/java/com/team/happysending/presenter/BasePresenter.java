@@ -29,6 +29,4 @@ public abstract class BasePresenter<T extends BaseView> {
         this.someView = thisView;
     }
 
-
-
 }

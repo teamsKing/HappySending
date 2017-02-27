@@ -55,7 +55,11 @@ public class SendPresenter extends BasePresenter<SendView> {
      * @param mConvenientBanner
      */
     public void setConvenientBannerView(ConvenientBanner mConvenientBanner){
-
+    /*    String url1 = "res://com.team.happysending/" + R.drawable.lunbo1;
+        String url2 = "res://com.team.happysending/" + R.drawable.lunbo2;
+        String url3 = "res://com.team.happysending/" + R.drawable.lunbo1;
+        String url4 = "res://com.team.happysending/" + R.drawable.lunbotu;
+        */
 
         mBannerItems = new ArrayList<>();
         mBannerItems.add(new BannerItem("http://img2.imgtn.bdimg.com/it/u=115095478,556151950&fm=21&gp=0.jpg"));
