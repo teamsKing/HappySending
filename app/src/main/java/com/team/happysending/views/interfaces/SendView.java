@@ -16,4 +16,9 @@ public interface SendView extends BaseView {
      */
     void onSucceess(View view,BannerItem data);
 
+    /**
+     * 回调Popwindow的获取时间
+     */
+    void getQuHuoTime(String time,boolean flag);
+
 }
