@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/moneypop_QuXiao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/moneypopup_QueDing"
+        android:layout_alignBottom="@+id/moneypopup_QueDing"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:background="@color/small_goods_price"
+        android:text="取消"/>
+    <Button
+        android:id="@+id/moneypopup_QueDing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/white"
+        android:background="@color/btn_blue"
+        android:text="确定"/>
+
+    <com.team.happysending.views.widget.MSeekBar
+        android:id="@+id/moneypopup_Seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:max="100"
+        android:layout_below="@+id/moneypopup_QueDing"
+        android:progress="0"
+        android:progressDrawable="@drawable/bg_seekbar_progress_drawable"
+        android:thumb="@drawable/icon_seekbar_thumb"
+        app:textBackground="@drawable/bg_seekbar_display1"
+        app:textColor="@color/white"
+        app:textOrientation="top"
+        app:textSize="14sp"/>
+</RelativeLayout>

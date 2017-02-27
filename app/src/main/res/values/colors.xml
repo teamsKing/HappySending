@@ -5,9 +5,12 @@
     <color name="colorAccent">#FF4081</color>-->
     <color name="itemBgk">#ECEDEB</color>
     <color name="colorPrimary">#ec0f38</color>
-    <color name="colorPrimaryDark">#ec0f38</color>
     <color name="colorAccent">#ec0f38</color>
-
+   <color name="colorPrimaryDark">#303F9F</color>
+   <color name="RoundColor">#DAF6FE</color>
+   <color name="TimeTextColor">#FF84AD</color>
+   <color name="RoundFillColor">#45C3E5</color>
+   <color name="RoundHintTextColor">#666666</color>
  <color name="primary">#E43F3F</color>
  <color name="primary_dark">#E12929</color>
  <color name="primary_darker">#CC1D1D</color>

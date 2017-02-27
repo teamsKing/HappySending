@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+    <ImageView android:id="@+id/contacts_image"
+               android:layout_width="50dip"
+               android:layout_height="60dip"
+               android:src="@drawable/a62"/>
+    <TextView
+        android:id="@+id/contacts_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/contacts_image"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="11111111"
+        android:textSize="15dip"/>
+
+    <TextView
+        android:id="@+id/contacts_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contacts_name"
+        android:layout_margin="16dp"
+        android:layout_toRightOf="@+id/contacts_image"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="22222222222"
+        android:textColor="@color/black"
+        android:textSize="20dip"/>
+</RelativeLayout>
