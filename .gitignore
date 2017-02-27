@@ -47,3 +47,6 @@ HappySending.iml
 app/libs/
 app/src/main/java/com/team/happysending/views/widget/
 !/app/src/main/java/com/team/happysending/views/widget/
+/gradle/wrapper/gradle-wrapper.properties
+!/app/build.gradle
+!/.gitignore

@@ -9,12 +9,16 @@ import android.widget.TextView;
 
 import com.team.happysending.R;
 import com.team.happysending.presenter.OrdersPresenter;
+import com.team.happysending.utils.ToastUtil;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.OrdersView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.team.happysending.R.id.orders_fa_shou;
+import static com.team.happysending.R.id.orders_yuying;
 
 /**
  * Created by zhang_shuai on 2017/2/24
@@ -25,7 +29,7 @@ import butterknife.OnClick;
 public class OrdersActivity extends BaseActivity<OrdersPresenter> implements OrdersView ,View.OnClickListener{
 
 
-    @BindView(R.id.orders_yuying)
+    @BindView(orders_yuying)
     TextView ordersYuying;
     @BindView(R.id.orders_leibian)
     TextView ordersLeibian;
@@ -35,7 +39,7 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
     TextView ordersWoFa;
     @BindView(R.id.tv4)
     TextView tv4;
-    @BindView(R.id.orders_fa_shou)
+    @BindView(orders_fa_shou)
     TextView ordersFaShou;
     @BindView(R.id.orders_shuigou)
     TextView ordersShuigou;
@@ -60,6 +64,12 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
 
     private void initUI() {
         findViewById(R.id.orders_jiedan).setOnClickListener(this);
+        findViewById(R.id.orders_yuying).setOnClickListener(this);
+        findViewById(R.id.orders_leibian).setOnClickListener(this);
+        findViewById(R.id.orders_jiage).setOnClickListener(this);
+        findViewById(R.id.orders_wo_fa).setOnClickListener(this);
+        findViewById(R.id.orders_shuigou).setOnClickListener(this);
+        findViewById(R.id.orders_fa_shou).setOnClickListener(this);
     }
 
     @Override
@@ -87,7 +97,7 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
     }
 
 
-    @OnClick(R.id.orders_yuying)
+    @OnClick(orders_yuying)
     public void onClick() {
 
     }
@@ -95,10 +105,30 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            //接单详情界面
             case R.id.orders_jiedan:
                 startActivity(new Intent(this,OrderDetailsActivity.class));
                 finish();
                 break;
+            case R.id.orders_yuying:
+                ToastUtil.show(this,"语音");
+                break;
+            case R.id.orders_leibian:
+                ToastUtil.show(this,"物品类别");
+                break;
+            case R.id.orders_jiage:
+                ToastUtil.show(this,"价格");
+                break;
+            case R.id.orders_wo_fa:
+                ToastUtil.show(this,"我fa的距离");
+                break;
+            case R.id.orders_shuigou:
+                ToastUtil.show(this,"水果");
+                break;
+            case R.id.orders_fa_shou:
+                ToastUtil.show(this,"我shou的距离");
+                break;
+
         }
     }
 }

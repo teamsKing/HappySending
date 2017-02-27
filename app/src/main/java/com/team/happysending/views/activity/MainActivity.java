@@ -18,7 +18,7 @@ import com.team.happysending.utils.Constant;
 import com.team.happysending.views.adapter.Main_tab_Adapter;
 import com.team.happysending.views.fragment.HelpMeToBuyFragment;
 import com.team.happysending.views.fragment.HelpMeToHandFragment;
-import com.team.happysending.views.fragment.HelpMeToSendFragment;
+import com.team.happysending.views.fragment.SendFragment;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.MainView;
 
@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         mHelpMeToHand = new HelpMeToHandFragment();
         //将fragment装进列表中
         list_fragment = new ArrayList<>();
-        list_fragment.add(mHelpMeToSend);
+        list_fragment.add(mSendFragment);
         list_fragment.add(mHelpMeToBuy);
         list_fragment.add(mHelpMeToHand);
         //将名称加载tab名字列表，正常情况下，我们应该在values/arrays.xml中进行定义然后调用
