@@ -16,7 +16,7 @@ import butterknife.OnClick;
 
 /**
  * Created by 樊、先生 on 2017/2/26.
- * 实名认证类
+ * 实名认证类111
  */
 
 public class RenZhengActivity extends AppCompatActivity {
