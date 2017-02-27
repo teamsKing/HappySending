@@ -24,6 +24,14 @@ android {
         }
     }
 
+    android {
+
+        defaultConfig {
+            multiDexEnabled true
+        }
+
+    }
+
 }
 
 dependencies {
@@ -61,7 +69,6 @@ dependencies {
     compile 'de.greenrobot:eventbus:3.0.0-beta1'
     //md5.0
     compile 'com.android.support:design:25.1.1'
-    compile 'com.android.support:support-v4:25.1.1'
     compile 'com.google.code.gson:gson:2.8.0'
     //小红点
     compile 'q.rorbin:badgeview:1.0.3'
@@ -69,8 +76,7 @@ dependencies {
     compile 'net.fredericosilva:showTipsView:1.0.4'
     compile 'com.android.support:design:25.2.0'
     compile files('libs/AMap_Location_V3.3.0_20170118.jar')
-    compile files('libs/AMap_Search_V4.0.0_20170111.jar')
-    compile files('libs/android-support-v4.jar')
+    // compile files('libs/android-support-v4.jar')
     compile files('libs/Android_Map3D_SDK_V4.1.3_20161208.jar')
     compile 'com.zaaach:citypicker:1.1'
     compile files('libs/open_sdk_r5781.jar')

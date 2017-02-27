@@ -25,4 +25,5 @@ public interface ApiService {
     @POST("register")
     Observable<BaseBean<RegistBean>> getRegistData(@Field("nick_name") String nicehng, @Field("phone_num") String phonenum, @Field("user_password") String userpassword, @Field("user_district") String userdistrict);
 
+
 }

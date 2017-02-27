@@ -4,7 +4,26 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入"
+            android:id="@+id/selectaddress"
+            android:layout_weight="1"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="搜索"
+            android:layout_weight="4"
+            android:id="@+id/selectbuut"
+            />
+    </LinearLayout>
     <com.amap.api.maps.MapView
         android:id="@+id/map"
         android:layout_width="match_parent"
