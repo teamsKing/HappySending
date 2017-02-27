@@ -14,6 +14,8 @@ import com.team.happysending.views.interfaces.BaseView;
 
 import butterknife.ButterKnife;
 
+import static com.team.happysending.utils.Utils.getContext;
+
 /**
  * Created by zhaoshihao on 2017/2/23.
  */
@@ -43,8 +45,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-
 
         mPresenter = initPresenter();
         //注册接口
