@@ -269,34 +269,45 @@
         android:background="@mipmap/dialog_btn_right"
         android:text="接单"
         android:textColor="#fff" />
-    <LinearLayout
+
+    <RelativeLayout
+        android:id="@+id/relative"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="180dp"
         android:layout_alignParentBottom="true"
-        >
+        android:orientation="vertical">
+
 
         <Button
             android:id="@+id/orders_homebtn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_weight="1"
-            android:background="@mipmap/bcq" />
+            android:background="@drawable/bcp" />
 
-        <ImageView
-            android:id="@+id/orders_home_jiedan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/receive_order" />
+        <RelativeLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/customyuan">
+
+            <ImageView
+                android:id="@+id/orders_home_jiedan"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/receive_order" />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/orders_home_renwu"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@mipmap/bcj" />
-    </LinearLayout>
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bcj" />
+    </RelativeLayout>
 
 </RelativeLayout>

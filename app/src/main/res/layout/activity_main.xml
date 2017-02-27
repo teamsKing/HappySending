@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:background="@mipmap/bcq" />
+            android:background="@drawable/bcq" />
 
         <RelativeLayout
             android:layout_width="90dp"
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:background="@mipmap/bcj" />
+            android:background="@drawable/bcj" />
     </RelativeLayout>
 
 

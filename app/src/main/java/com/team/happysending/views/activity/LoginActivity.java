@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.team.happysending.R;
 import com.team.happysending.model.bean.LoginBean;
@@ -12,6 +13,11 @@ import com.team.happysending.presenter.LoginPresenter;
 import com.team.happysending.utils.Constant;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.LoginView;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+
+import java.util.Map;
 
 /**
  * 登陆
@@ -19,13 +25,15 @@ import com.team.happysending.views.interfaces.LoginView;
  */
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginView, View.OnClickListener {
-
+    private UMShareAPI mShareAPI;
     private EditText mLoginPhone;
     private EditText mLoginPwd;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mShareAPI = UMShareAPI.get(this);
         initUI();
     }
 
@@ -68,8 +76,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.qqlogin:
+                mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
                 break;
             case R.id.weixinlogin:
+                mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.WEIXIN, umAuthListener);
                 break;
             case R.id.back:
                 finish();
@@ -99,5 +109,38 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+
+    }
+
+    private UMAuthListener umAuthListener = new UMAuthListener() {
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+            //授权开始的回调
+        }
+
+        @Override
+        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+            Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+            editor.putString(Constant.LOGINTOKEN, "accessToken ");
+            editor.commit();
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+            Toast.makeText(getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform, int action) {
+            Toast.makeText(getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
+        }
+    };
 
 }
