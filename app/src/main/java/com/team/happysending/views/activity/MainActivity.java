@@ -9,8 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.team.happysending.R;
 import com.team.happysending.presenter.MainPresenter;
@@ -18,14 +18,15 @@ import com.team.happysending.utils.Constant;
 import com.team.happysending.views.adapter.Main_tab_Adapter;
 import com.team.happysending.views.fragment.HelpMeToBuyFragment;
 import com.team.happysending.views.fragment.HelpMeToHandFragment;
-import com.team.happysending.views.fragment.HelpMeToSendFragment;
+import com.team.happysending.views.fragment.SendFragment;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.MainView;
+import com.zaaach.citypicker.CityPickerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity<MainPresenter> implements MainView,View.OnClickListener {
+public class MainActivity extends BaseActivity<MainPresenter> implements MainView, View.OnClickListener {
 
     private TabLayout tab_FindFragment_title; //定义TabLayout
     private ViewPager vp_FindFragment_pager; //定义viewPager
@@ -37,6 +38,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     private SendFragment mSendFragment;//帮我送fragment
     private ImageView image;
     private TextView logintext;
+    private RelativeLayout mRelative;
+    private static final int REQUEST_CODE_PICK_CITY = 0;
+    private TextView mCityName;
 
 
     @Override
@@ -60,7 +64,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     }
 
     private void initUI() {
-        findViewById(R.id.AddressSpinner).setOnClickListener(this);
+        mCityName = (TextView) findViewById(R.id.cityname);
+        mCityName.setOnClickListener(this);
+        mRelative = (RelativeLayout) findViewById(R.id.relative);
         findViewById(R.id.btn_right).setOnClickListener(this);
         logintext = (TextView) findViewById(R.id.text_btn);
         logintext.setOnClickListener(this);
@@ -68,14 +74,14 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         tab_FindFragment_title = (TabLayout) findViewById(R.id.tab_FindFragment_title);
         vp_FindFragment_pager = (ViewPager) findViewById(R.id.vp_FindFragment_pager);
         findViewById(R.id.renwu).setOnClickListener(this);
-        findViewById(R.id.jie).setOnClickListener(this);
+        findViewById(R.id.jiedan).setOnClickListener(this);
         //初始化各fragment
         mSendFragment = new SendFragment();
         mHelpMeToBuy = new HelpMeToBuyFragment();
         mHelpMeToHand = new HelpMeToHandFragment();
         //将fragment装进列表中
         list_fragment = new ArrayList<>();
-        list_fragment.add(mHelpMeToSend);
+        list_fragment.add(mSendFragment);
         list_fragment.add(mHelpMeToBuy);
         list_fragment.add(mHelpMeToHand);
         //将名称加载tab名字列表，正常情况下，我们应该在values/arrays.xml中进行定义然后调用
@@ -94,8 +100,33 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         vp_FindFragment_pager.setAdapter(fAdapter);
         //TabLayout加载viewpager
         tab_FindFragment_title.setupWithViewPager(vp_FindFragment_pager);
-    }
 
+        vp_FindFragment_pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                if (i == 0) {
+                    mRelative.setVisibility(View.VISIBLE);
+                }
+                if (i == 1) {
+                    mRelative.setVisibility(View.GONE);
+                }
+                if (i == 2) {
+                    mRelative.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+
+    }
 
 
     /**
@@ -135,24 +166,32 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.AddressSpinner:
-                Intent intent = new Intent(this, AddressChoseActivity.class);
-                startActivity(intent);
+            case R.id.cityname:
+                //启动
+                startActivityForResult(new Intent(MainActivity.this, CityPickerActivity.class),
+                        REQUEST_CODE_PICK_CITY);
                 break;
             case R.id.text_btn:
-                Toast.makeText(this,"登陆",Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(this, LoginActivity.class);
                 startActivity(intent1);
                 break;
-            case R.id.jie:
-                Toast.makeText(this,"登陆",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,OrdersActivity.class));
+            case R.id.jiedan:
+                startActivity(new Intent(this, OrdersActivity.class));
                 break;
             case R.id.renwu:
-                Toast.makeText(this,"rewu",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,HistoryActivity.class));
+                startActivity(new Intent(this, HistoryActivity.class));
                 break;
+        }
+    }
 
+    //重写onActivityResult方法
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE_PICK_CITY && resultCode == RESULT_OK) {
+            if (data != null) {
+                String city = data.getStringExtra(CityPickerActivity.KEY_PICKED_CITY);
+                mCityName.setText(city);
+            }
         }
     }
 }

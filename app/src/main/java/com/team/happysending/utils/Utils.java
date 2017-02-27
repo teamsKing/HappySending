@@ -1,6 +1,5 @@
 package com.team.happysending.utils;
 
-import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -17,16 +16,12 @@ import android.graphics.Rect;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.provider.MediaStore;
 import android.provider.Settings;
-//import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -55,6 +50,8 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+//import android.support.design.widget.Snackbar;
+
 /**
  * Created by linlongxin on 2015/12/26.
  */
@@ -82,7 +79,7 @@ public class Utils {
         mContext = context;
     }
 
-    public static Context getContext(){
+    public static Context getContext() {
         return mContext;
     }
 
@@ -105,7 +102,6 @@ public class Utils {
 //        Toast.makeText(mContext, content, Toast.LENGTH_LONG).show();
 //
 //    }
-
 
 
 //    public static void SnackbarLong(View view, String hintStr, String actionStr, View.OnClickListener clickListener) {
@@ -386,26 +382,27 @@ public class Utils {
     /**
      * 拨打电话
      */
-    public static void call(Activity activity,String phoneNumber) {
-        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
+    // public static void call(Activity activity,String phoneNumber) {
+    //   if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+    // TODO: Consider calling
+    //    ActivityCompat#requestPermissions
+    // here to request the missing permissions, and then overriding
+    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+    //                                          int[] grantResults)
+    // to handle the case where the user grants the permission. See the documentation
+    // for ActivityCompat#requestPermissions for more details.
+    //      return;
+    // }
 //        activity.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber)));
-    }
+    // }
 
     //跳到拨号界面
-    public static void jumpDialUI(Activity activity,String phoneNumber){
-        Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:" + phoneNumber));
+    public static void jumpDialUI(Activity activity, String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
     }
+
     /**
      * 跳转至拨号界面
      */

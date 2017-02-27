@@ -72,4 +72,5 @@ dependencies {
     compile files('libs/AMap_Search_V4.0.0_20170111.jar')
     compile files('libs/android-support-v4.jar')
     compile files('libs/Android_Map3D_SDK_V4.1.3_20161208.jar')
+    compile 'com.zaaach:citypicker:1.1'
 }
