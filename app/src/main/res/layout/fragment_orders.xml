@@ -195,6 +195,7 @@
                 android:text="起:" />
 
             <TextView
+                android:id="@+id/orders_qishi_Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/qi"
@@ -215,6 +216,7 @@
                 android:text="始:" />
 
             <TextView
+                android:id="@+id/orders_jieshu_Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/shi"

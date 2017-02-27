@@ -207,7 +207,7 @@
                 android:id="@+id/detail_shuigou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="请输入水果100斤"
+                android:hint="水果100斤"
                 android:layout_marginRight="200dp"
                 android:layout_toRightOf="@+id/tv10"/>
         </RelativeLayout>
