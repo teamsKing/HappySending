@@ -1,10 +1,14 @@
 package com.team.happysending.views.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.team.happysending.R;
 import com.team.happysending.presenter.HistoryPresenter;
@@ -17,14 +21,23 @@ import com.team.happysending.views.interfaces.HistoryView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 /**
  * Created by zhang_shuai on 2017/2/24
- *
+ * <p>
  * 任务历史
  */
 
 public class HistoryActivity extends BaseActivity<HistoryPresenter> implements HistoryView {
 
+    @BindView(R.id.history_homebtn)
+    Button historyHomebtn;
+    @BindView(R.id.history_home_jiedan)
+    ImageView historyHomeJiedan;
+    @BindView(R.id.history_home_renwu)
+    Button historyHomeRenwu;
     private TabLayout mTitle; //定义TabLayout
     private ViewPager mViewPager; //定义viewPager
     private Main_tab_Adapter fAdapter; //定义adapter
@@ -33,6 +46,7 @@ public class HistoryActivity extends BaseActivity<HistoryPresenter> implements H
 
     private UnderwayFragment mUnderwayFragment;//正在进行的任务
     private TaskHistoryFragment mTaskHistoryFragment; //任务的历史记录
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,5 +103,32 @@ public class HistoryActivity extends BaseActivity<HistoryPresenter> implements H
     @Override
     protected void initData() {
 
+    }
+
+    @OnClick({R.id.history_homebtn, R.id.history_home_jiedan, R.id.history_home_renwu})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            /**
+             * 回到主界面
+             */
+            case R.id.history_homebtn:
+                startActivity(new Intent(this,MainActivity.class));
+                finish();
+                break;
+            /**
+             * 接单界面
+             */
+            case R.id.history_home_jiedan:
+                startActivity(new Intent(this,OrdersActivity.class));
+                finish();
+                break;
+            /**
+             * 历史任务的界面即本类
+             */
+            case R.id.history_home_renwu:
+                startActivity(new Intent(this,HistoryActivity.class));
+                finish();
+                break;
+        }
     }
 }
