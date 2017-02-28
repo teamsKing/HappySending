@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.team.happysending.R;
@@ -23,11 +22,9 @@ import butterknife.OnClick;
  * 接单界面
  */
 
-public class OrdersActivity extends BaseActivity<OrdersPresenter> implements OrdersView {
+public class OrdersActivity extends BaseActivity<OrdersPresenter> implements OrdersView, View.OnClickListener {
 
 
-    @BindView(R.id.ll)
-    LinearLayout ll;
     @BindView(R.id.orders_yuying)
     TextView ordersYuying;
     @BindView(R.id.orders_leibian)
@@ -38,14 +35,12 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
     TextView ordersWoFa;
     @BindView(R.id.tv4)
     TextView tv4;
-    @BindView(R.id.tv6)
-    TextView tv6;
     @BindView(R.id.orders_fa_shou)
     TextView ordersFaShou;
     @BindView(R.id.orders_shuigou)
     TextView ordersShuigou;
     @BindView(R.id.orders_jiedan)
-    Button ordersJiedan;
+    Button mOrdersJiedan;
     @BindView(R.id.orders_homebtn)
     Button ordersHomebtn;
     @BindView(R.id.orders_home_jiedan)
@@ -60,7 +55,6 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
         ButterKnife.bind(this);
         initUI();
     }
-
 
 
     private void initUI() {
@@ -99,9 +93,9 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.orders_jiedan:
-                startActivity(new Intent(this,OrderDetailsActivity.class));
+                startActivity(new Intent(this, OrderDetailsActivity.class));
                 finish();
                 break;
         }
