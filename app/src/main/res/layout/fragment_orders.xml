@@ -251,9 +251,10 @@
                 android:id="@+id/orders_shuigou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="200dp"
                 android:layout_toRightOf="@+id/tv10"
-                android:text="水果100斤" />
+                android:text="水果100斤"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
 

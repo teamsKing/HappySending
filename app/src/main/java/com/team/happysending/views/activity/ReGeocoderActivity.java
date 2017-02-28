@@ -3,6 +3,7 @@ package com.team.happysending.views.activity;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,12 +43,15 @@ import com.amap.api.services.help.Inputtips;
 import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
 import com.team.happysending.R;
+import com.team.happysending.model.net.FirstEvent;
 import com.team.happysending.utils.AMapUtil;
 import com.team.happysending.utils.ToastUtil;
 import com.team.happysending.utils.dt.Inter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * 地理编码与逆地理编码功能介绍
@@ -73,6 +77,7 @@ public class ReGeocoderActivity extends Activity implements OnGeocodeSearchListe
     private Marker makerB;
     private boolean flag = true;
     private String startAddress;
+
     private List<String> lists;
     private double mDistance;
     @Override
@@ -119,6 +124,8 @@ public class ReGeocoderActivity extends Activity implements OnGeocodeSearchListe
                 GeocodeQuery query = new GeocodeQuery(editText.getText().toString(), "010");// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
                 geocoderSearch.getFromLocationNameAsyn(query);
                 startAddress=editText.getText().toString();
+
+
                 InputtipsQuery inputquery = new InputtipsQuery(editText.getText().toString(), "北京");
                 inputquery.setCityLimit(true);
                 Inputtips inputTips = new Inputtips(ReGeocoderActivity.this, inputquery);
@@ -365,6 +372,17 @@ public class ReGeocoderActivity extends Activity implements OnGeocodeSearchListe
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 startAddress=lists.get(position);
+                Intent intent = getIntent();
+                int falg = intent.getIntExtra("falg", 0);
+                //发送消息
+                if(falg == 1){
+                    EventBus.getDefault().post(new FirstEvent(startAddress,1));
+
+                }else if(falg == 2){
+
+                   EventBus.getDefault().post(new FirstEvent(startAddress,2));
+                }
+                finish();
             }
         });
     }

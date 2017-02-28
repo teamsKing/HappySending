@@ -2,6 +2,7 @@ package com.team.happysending.views.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.SharedPreferences;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.orhanobut.hawk.Hawk;
@@ -16,7 +17,7 @@ public class MyApplication extends Application {
 
     private ArrayList<Activity> mActivityList;
 
-
+    public static  SharedPreferences mSp;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -25,6 +26,7 @@ public class MyApplication extends Application {
         }
         Hawk.init(this).build();
         Fresco.initialize(this);
+        mSp =  getSharedPreferences("config", MODE_PRIVATE);
     }
 
     //将activity添加进集合

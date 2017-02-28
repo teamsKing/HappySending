@@ -242,7 +242,7 @@
             android:id="@+id/detail_shui"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_toRightOf="@+id/tv12"
             android:hint="水果"/>
 
@@ -260,7 +260,7 @@
             android:layout_height="wrap_content"
             android:text="￥12.00元"
             android:textColor="#ec0f38"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="55dp"
             android:layout_toRightOf="@+id/fei"
             />
     </RelativeLayout>
