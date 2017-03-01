@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);//不包含ActionBar
         slidingMenu.setMenu(R.layout.right_menu);
         //设置透明度
-        slidingMenu.setOffsetFadeDegree(0.4f);
+        slidingMenu.setOffsetFadeDegree(0.4f);  
 
     }
 
