@@ -24,28 +24,49 @@ import butterknife.OnClick;
  */
 
 public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> implements OrderDetailsView {
+    /**
+     * 开始地址
+     */
     @BindView(R.id.detaild_shuqi)
-    TextView detaildShuqi;
+    TextView mDetaildShuqi;
+    /**
+     * 结束地址
+     */
     @BindView(R.id.detaild_shushi)
-    TextView detaildShushi;
+    TextView mDetaildShushi;
+    /**
+     * 我倒发货的距离
+     */
     @BindView(R.id.details_wo_fa)
-    TextView detailsWoFa;
+    TextView mDetailsWoFa;
+    /**
+     * 发货到收货的距离
+     */
     @BindView(R.id.detail_fa_shou)
-    TextView detailFaShou;
+    TextView mDetailFaShou;
+    /**
+     *备注
+     */
     @BindView(R.id.detail_shuigou)
-    TextView detailShuigou;
+    TextView mDetailShuigou;
+    /**
+     *物品类别
+     */
     @BindView(R.id.detail_shui)
-    TextView detailShui;
+    TextView mDetailShui;
+    /**
+     * 配送的费用
+     */
     @BindView(R.id.detail_feiyong)
-    TextView detailFeiyong;
+    TextView mDetailFeiyong;
     @BindView(R.id.detail_homebtn)
-    Button detailHomebtn;
+    Button mDetailHomebtn;
     @BindView(R.id.detail_home_jiedan)
-    ImageView detailHomeJiedan;
+    ImageView mDetailHomeJiedan;
     @BindView(R.id.detail_home_renwu)
-    Button detailHomeRenwu;
+    Button mDetailHomeRenwu;
     @BindView(R.id.detail_jiedan)
-    Button detail_jiedan;
+    Button mDetail_jiedan;
 
     @Override
     protected int getLayout() {
@@ -70,6 +91,17 @@ public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> im
     @Override
     protected void initData() {
 
+        Intent intent = getIntent();
+        String startAdderss = intent.getStringExtra("startAdderss");
+        String endAdderss = intent.getStringExtra("endAdderss");
+        String beiZhu = intent.getStringExtra("beiZhu");
+        String money = intent.getStringExtra("money");
+        String xuanZe = intent.getStringExtra("xuanZe");
+        mDetaildShuqi.setText(startAdderss);
+        mDetaildShushi.setText(endAdderss);
+        mDetailShui.setText(xuanZe);
+        mDetailFeiyong.setText("￥:"+money);
+        mDetailShuigou.setText(beiZhu);
     }
 
     @Override
@@ -131,8 +163,8 @@ public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> im
              * 接单的界面
              */
             case R.id.detail_home_jiedan:
-                startActivity(new Intent(this,OrderDetailsActivity.class));
-                finish();
+//                startActivity(new Intent(this,OrderDetailsActivity.class));
+//                finish();
                 break;
             /**
              * 历史任务的界面

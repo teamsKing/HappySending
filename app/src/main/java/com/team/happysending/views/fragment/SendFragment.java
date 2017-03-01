@@ -1,5 +1,6 @@
 package com.team.happysending.views.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.view.View;
@@ -13,12 +14,18 @@ import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.team.happysending.R;
 import com.team.happysending.model.bean.BannerItem;
+import com.team.happysending.model.net.FirstEvent;
 import com.team.happysending.presenter.SendPresenter;
+import com.team.happysending.views.activity.ReGeocoderActivity;
+import com.team.happysending.views.app.MyApplication;
 import com.team.happysending.views.interfaces.BaseView;
 import com.team.happysending.views.interfaces.SendView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 
 /**
  * Created by 樊、先生 on 2017/2/23.
@@ -84,10 +91,47 @@ public class SendFragment extends BaseFragment<SendPresenter> implements SendVie
      * 发货地址
      */
     private boolean SETSTARTADD = false;
+    /**
+     * 开始的地址
+     */
+    private String startAdderss;
+    /**
+     * 发货的地址
+     */
+    private String endAdderss;
 
 
     @Override
     protected void initView(View view) {
+        //注册EventBus
+        EventBus.getDefault().register(this);
+
+
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MainThread)
+    public void onEvent(FirstEvent event){
+        String msg = event.getMsg();
+        int falg = event.getFalg();
+        if(falg == 1){
+            startAdderss = msg;
+            mStartAddress.setText(startAdderss);
+            SETSTOPADD = true;
+            MyApplication.mSp.edit().putString("startAdderss",startAdderss).commit();
+
+        }else if(falg ==2){
+            endAdderss = msg;
+            mStopAddress.setText(endAdderss);
+            SETSTARTADD = true;
+            MyApplication.mSp.edit().putString("endAdderss",endAdderss).commit();
+        }
+
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        EventBus.getDefault().unregister(this);//反注册EventBus
     }
 
     @Override
@@ -148,17 +192,26 @@ public class SendFragment extends BaseFragment<SendPresenter> implements SendVie
              * 开始地址
              */
             case R.id.send_start:
+                int falg = 1;
+                Intent intent =  new Intent(mContext, ReGeocoderActivity.class);
+                intent.putExtra("falg",falg);
+                startActivity(intent);
                 break;
             /**
              * 结束地址
              */
             case R.id.stop_start:
+                int tag = 2;
+                Intent intent1 =  new Intent(mContext, ReGeocoderActivity.class);
+                intent1.putExtra("falg",tag);
+                startActivity(intent1);
                 break;
             /**
              * 获取取货时间
              */
             case R.id.get_time:
                 mPresenter.showWeekBottoPopupWindow(mSendLinearLayout);
+                SETTIME = true;
                 break;
             /**
              * 立即下单
