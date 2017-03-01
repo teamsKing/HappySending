@@ -26,7 +26,7 @@ import static com.team.happysending.R.id.orders_yuying;
  * 接单界面
  */
 
-public class OrdersActivity extends BaseActivity<OrdersPresenter> implements OrdersView ,View.OnClickListener{
+public class OrdersActivity extends BaseActivity<OrdersPresenter> implements OrdersView, View.OnClickListener {
 
 
     @BindView(orders_yuying)
@@ -69,7 +69,6 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
     }
 
 
-
     private void initUI() {
         findViewById(R.id.orders_jiedan).setOnClickListener(this);
         findViewById(R.id.orders_yuying).setOnClickListener(this);
@@ -110,78 +109,82 @@ public class OrdersActivity extends BaseActivity<OrdersPresenter> implements Ord
     }
 
 
-    @OnClick(orders_yuying)
+    @OnClick(R.id.orders_yuying)
     public void onClick() {
 
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             /**
              * 接单详情界面
              */
             case R.id.orders_jiedan:
-                startActivity(new Intent(this,OrderDetailsActivity.class));
+                startActivity(new Intent(this, OrderDetailsActivity.class));
                 finish();
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             /**
              * 录取语音
              */
             case R.id.orders_yuying:
-                ToastUtil.show(this,"语音");
+                ToastUtil.show(this, "语音");
                 break;
             /**
              * 物品类别
              */
             case R.id.orders_leibian:
-                ToastUtil.show(this,"物品类别");
+                ToastUtil.show(this, "物品类别");
                 break;
             /**
              * 已加价格
              */
             case R.id.orders_jiage:
-                ToastUtil.show(this,"价格");
+                ToastUtil.show(this, "价格");
                 break;
             /**
              * 我到取货的距离
              */
             case R.id.orders_wo_fa:
-                ToastUtil.show(this,"我fa的距离");
+                ToastUtil.show(this, "我fa的距离");
                 break;
             /**
              * 水果有多少斤
              */
             case R.id.orders_shuigou:
-                ToastUtil.show(this,"水果");
+                ToastUtil.show(this, "水果");
                 break;
             /**
              * 我从取货到收货人的距离
              */
             case R.id.orders_fa_shou:
-                ToastUtil.show(this,"我shou的距离");
+                ToastUtil.show(this, "我shou的距离");
                 break;
 
             /**
              * 回到主页
              */
             case R.id.orders_homebtn:
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
                 finish();
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             /**
              * 留在本界面的接单
              */
             case R.id.orders_home_jiedan:
-                startActivity(new Intent(this,OrdersActivity.class));
+                startActivity(new Intent(this, OrdersActivity.class));
                 finish();
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             /**
              * 跳转到历史任务界面
              */
             case R.id.orders_home_renwu:
-                startActivity(new Intent(this,HistoryActivity.class));
+                startActivity(new Intent(this, HistoryActivity.class));
                 finish();
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
         }
     }

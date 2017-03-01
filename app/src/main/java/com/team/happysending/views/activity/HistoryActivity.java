@@ -112,22 +112,25 @@ public class HistoryActivity extends BaseActivity<HistoryPresenter> implements H
              * 回到主界面
              */
             case R.id.history_homebtn:
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
                 finish();
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             /**
              * 接单界面
              */
             case R.id.history_home_jiedan:
-                startActivity(new Intent(this,OrdersActivity.class));
+                startActivity(new Intent(this, OrdersActivity.class));
                 finish();
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             /**
              * 历史任务的界面即本类
              */
             case R.id.history_home_renwu:
-                startActivity(new Intent(this,HistoryActivity.class));
+                startActivity(new Intent(this, HistoryActivity.class));
                 finish();
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
         }
     }

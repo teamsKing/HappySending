@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.team.happysending.R;
 import com.team.happysending.presenter.MainPresenter;
 import com.team.happysending.utils.Constant;
@@ -47,6 +48,16 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initUI();
+        //实例化菜单控件
+        SlidingMenu slidingMenu = new SlidingMenu(this);
+        //设置相关属性
+        slidingMenu.setMode(SlidingMenu.RIGHT);//菜单靠左
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+        slidingMenu.setBehindOffset(80);//SlidingMenu划出时主页面显示的剩余宽度
+        slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);//不包含ActionBar
+        slidingMenu.setMenu(R.layout.right_menu);
+        //设置透明度
+        slidingMenu.setOffsetFadeDegree(0.4f);
 
     }
 
@@ -170,16 +181,23 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
                 //启动
                 startActivityForResult(new Intent(MainActivity.this, CityPickerActivity.class),
                         REQUEST_CODE_PICK_CITY);
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             case R.id.text_btn:
                 Intent intent1 = new Intent(this, LoginActivity.class);
                 startActivity(intent1);
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             case R.id.jiedan:
                 startActivity(new Intent(this, OrdersActivity.class));
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
                 break;
             case R.id.renwu:
                 startActivity(new Intent(this, HistoryActivity.class));
+                overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+                break;
+            case R.id.btn_right:
+
                 break;
         }
     }
