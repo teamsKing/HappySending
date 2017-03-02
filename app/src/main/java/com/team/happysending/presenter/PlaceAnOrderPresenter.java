@@ -1,9 +1,12 @@
 package com.team.happysending.presenter;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.GridLayoutManager;
@@ -32,13 +35,15 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static android.support.v4.content.ContextCompat.checkSelfPermission;
+
 /**
  * Created by 樊、先生 on 2017/2/24.
  * 立即下单的p层
  */
 
 public class PlaceAnOrderPresenter extends BasePresenter<PlaceAnOrderView> {
-
+    final public static int REQUEST_CODE_ASK_CALL_PHONE = 123;
     private PlaceAnOrderActivity mActivity;
     private AnimationDrawable mAnimationDrawable;
 
@@ -80,24 +85,45 @@ public class PlaceAnOrderPresenter extends BasePresenter<PlaceAnOrderView> {
     }
 
     /**
+     * 动态获取权限
+     */
+    public void getMyPermission(String fileName) {
+
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(mActivity, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                ToastUtils.showToast(mActivity,"没有获取权限！！！");
+                return;
+
+            }else {
+                startRecord(fileName);
+            }
+        }else {
+            startRecord(fileName);
+        }
+    }
+    /**
      * 开始录音
      *
      * @param fileName
      */
     public void startRecord(String fileName) {
-        FileName = fileName;
-        mRecorder = new MediaRecorder();
-        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mRecorder.setOutputFile(FileName);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-        try {
-            mRecorder.prepare();
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "prepare() failed");
-        }
-        mRecorder.start();
+
+            FileName = fileName;
+            mRecorder = new MediaRecorder();
+            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+            mRecorder.setOutputFile(FileName);
+            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+            try {
+                mRecorder.prepare();
+            } catch (IOException e) {
+                Log.e(LOG_TAG, "prepare() failed");
+            }
+            mRecorder.start();
+
+
     }
+
 
     //播放录音
     public void startPlayRecord(ImageView placeonorderImgYuYinLong) {

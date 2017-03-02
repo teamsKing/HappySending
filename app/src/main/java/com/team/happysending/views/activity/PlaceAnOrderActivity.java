@@ -3,7 +3,6 @@ package com.team.happysending.views.activity;
 import android.content.Intent;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -109,7 +108,7 @@ public class PlaceAnOrderActivity extends BaseActivity<PlaceAnOrderPresenter> im
             /**
              * 开始录音
              */
-            mPresenter.startRecord(FileName);
+            mPresenter.getMyPermission(FileName);
             /**
              * 显示语音条
              */
