@@ -87,4 +87,5 @@ dependencies {
     compile files('libs/umeng_social_tool.jar')
     compile files('libs/wechat-sdk-android-with-mta-1.0.2.jar')
     compile project(':slidingmenu')
+    compile files('libs/randomlayout.jar')
 }
