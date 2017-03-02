@@ -124,7 +124,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         @Override
         public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
-            Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
             editor.putString(Constant.LOGINTOKEN, "accessToken ");
             editor.commit();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -134,12 +134,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         @Override
         public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-            Toast.makeText(getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "登录失败", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onCancel(SHARE_MEDIA platform, int action) {
-            Toast.makeText(getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "取消登录", Toast.LENGTH_SHORT).show();
         }
     };
 

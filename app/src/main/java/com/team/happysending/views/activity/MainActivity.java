@@ -53,11 +53,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         //设置相关属性
         slidingMenu.setMode(SlidingMenu.RIGHT);//菜单靠左
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-        slidingMenu.setBehindOffset(80);//SlidingMenu划出时主页面显示的剩余宽度
+        slidingMenu.setBehindOffset(200);//SlidingMenu划出时主页面显示的剩余宽度
         slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);//不包含ActionBar
         slidingMenu.setMenu(R.layout.right_menu);
         //设置透明度
-        slidingMenu.setOffsetFadeDegree(0.4f);  
+        slidingMenu.setOffsetFadeDegree(0.4f);
 
     }
 

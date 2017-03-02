@@ -81,7 +81,6 @@ public class HistoryActivity extends BaseActivity<HistoryPresenter> implements H
 
     @Override
     protected int getLayout() {
-
         return R.layout.activity_history;
     }
 

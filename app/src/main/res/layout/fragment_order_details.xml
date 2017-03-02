@@ -9,182 +9,181 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@mipmap/dialog_btn_right"
-            android:text="订单详情"
             android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="#fff"/>
+            android:text="订单详情"
+            android:textColor="#fff"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/ll2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_below="@+id/ll"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/detaild_qi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="发货地址:"/>
+            android:layout_marginTop="10dp"
+            android:text="发货地址:" />
+
         <TextView
             android:id="@+id/detaild_shuqi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="北京市海淀区"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/detaild_qi"/>
+            android:layout_toRightOf="@+id/detaild_qi"
+            android:hint="北京市海淀区" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_below="@+id/ll2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/detaild_shi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="收货地址:"/>
+            android:layout_marginTop="10dp"
+            android:text="收货地址:" />
 
         <TextView
             android:id="@+id/detaild_shushi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="北京市海淀区"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/detaild_shi"
-             />
+            android:hint="北京市海淀区" />
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/detail_ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/itemBgk"
         android:layout_below="@+id/ll3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/itemBgk"
         android:orientation="vertical">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@mipmap/main_orders"
                 android:layout_marginTop="5dp"
-                android:text="我"
-                android:textColor="#fff"
+                android:background="@mipmap/main_orders"
                 android:gravity="center"
-                />
+                android:text="我"
+                android:textColor="#fff" />
+
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
-                android:textColor="#fff"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv2"
-                />
+                android:background="@drawable/u37_line"
+                android:textColor="#fff" />
+
             <TextView
                 android:id="@+id/details_wo_fa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="约2KM"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/tv3"
-                />
+                android:text="约2KM" />
+
             <TextView
                 android:id="@+id/tv5"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/details_wo_fa"
-                />
+                android:background="@drawable/u37_line" />
+
             <TextView
                 android:id="@+id/tv4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@mipmap/kuaidibiaoqian_lvse"
-                android:layout_marginTop="5dp"
-                android:text="发"
-                android:textColor="#fff"
-                android:gravity="center"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv5"
-                />
+                android:background="@mipmap/kuaidibiaoqian_lvse"
+                android:gravity="center"
+                android:text="发"
+                android:textColor="#fff" />
 
             <TextView
                 android:id="@+id/tv6"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv4"
-                />
+                android:background="@drawable/u37_line" />
+
             <TextView
                 android:id="@+id/detail_fa_shou"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="约10KM"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/tv6"
-                />
+                android:text="约10KM" />
+
             <TextView
                 android:id="@+id/tv7"
                 android:layout_width="20dp"
                 android:layout_height="0.5dp"
-                android:background="@drawable/u37_line"
-                android:layout_marginTop="5dp"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/detail_fa_shou"
-                />
+                android:background="@drawable/u37_line" />
+
             <TextView
                 android:id="@+id/tv8"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@mipmap/kuaidibiaoqian"
-                android:layout_marginTop="5dp"
-                android:text="收"
-                android:textColor="#fff"
-                android:gravity="center"
                 android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/tv7"
-                />
+                android:background="@mipmap/kuaidibiaoqian"
+                android:gravity="center"
+                android:text="收"
+                android:textColor="#fff" />
         </RelativeLayout>
-
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp">
 
             <TextView
@@ -192,24 +191,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/u53"
-                android:text="捎话"
-                android:textColor="#fff"
                 android:gravity="center"
-                />
+                android:text="捎话"
+                android:textColor="#fff" />
+
             <TextView
                 android:id="@+id/tv10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/u55"
                 android:layout_toRightOf="@+id/tv9"
-                android:gravity="center"/>
+                android:background="@drawable/u55"
+                android:gravity="center" />
+
             <TextView
                 android:id="@+id/detail_shuigou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="水果100斤"
                 android:layout_marginRight="200dp"
-                android:layout_toRightOf="@+id/tv10"/>
+                android:layout_toRightOf="@+id/tv10"
+                android:hint="水果100斤" />
         </RelativeLayout>
 
 
@@ -219,32 +219,35 @@
         android:id="@+id/detail_ll4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
         android:layout_below="@+id/detail_ll1"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:background="#fff">
+
         <TextView
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="订单信息"/>
+            android:text="订单信息" />
+
         <TextView
             android:id="@+id/tv12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tv1"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/tv1"
-            android:text="物品类别:"/>
+            android:text="物品类别:" />
+
         <TextView
             android:id="@+id/detail_shui"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_toRightOf="@+id/tv12"
-            android:hint="水果"/>
+            android:hint="水果" />
 
         <TextView
             android:id="@+id/fei"
@@ -253,16 +256,16 @@
             android:layout_below="@+id/tv12"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:text="配送费用:"/>
+            android:text="配送费用:" />
+
         <TextView
             android:id="@+id/detail_feiyong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="￥12.00元"
-            android:textColor="#ec0f38"
             android:layout_marginTop="55dp"
             android:layout_toRightOf="@+id/fei"
-            />
+            android:text="￥12.00元"
+            android:textColor="#ec0f38" />
     </RelativeLayout>
 
     <Button
@@ -270,41 +273,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail_ll4"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:background="@mipmap/dialog_btn_right"
-        android:textColor="#fff"
-        android:text="接单"/>
+        android:text="接单"
+        android:textColor="#fff" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/relative"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="180dp"
         android:layout_alignParentBottom="true"
-        >
+        android:orientation="vertical">
+
 
         <Button
             android:id="@+id/detail_homebtn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_weight="1"
-            android:background="@mipmap/bcq" />
+            android:background="@drawable/bcp" />
 
-        <ImageView
-            android:id="@+id/detail_home_jiedan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/receive_order" />
+        <RelativeLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/customyuan">
+
+            <ImageView
+                android:id="@+id/detail_home_jiedan"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/receive_order" />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/detail_home_renwu"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@mipmap/bcj" />
-    </LinearLayout>
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bcj" />
+    </RelativeLayout>
 
 </RelativeLayout>

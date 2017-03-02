@@ -45,12 +45,12 @@ public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> im
     @BindView(R.id.detail_fa_shou)
     TextView mDetailFaShou;
     /**
-     *备注
+     * 备注
      */
     @BindView(R.id.detail_shuigou)
     TextView mDetailShuigou;
     /**
-     *物品类别
+     * 物品类别
      */
     @BindView(R.id.detail_shui)
     TextView mDetailShui;
@@ -100,7 +100,7 @@ public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> im
         mDetaildShuqi.setText(startAdderss);
         mDetaildShushi.setText(endAdderss);
         mDetailShui.setText(xuanZe);
-        mDetailFeiyong.setText("￥:"+money);
+        mDetailFeiyong.setText("￥:" + money);
         mDetailShuigou.setText(beiZhu);
     }
 
@@ -111,7 +111,7 @@ public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> im
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.detaild_qi, R.id.detaild_shuqi, R.id.detaild_shushi, R.id.details_wo_fa, R.id.detail_fa_shou, R.id.detail_shuigou, R.id.detail_shui, R.id.detail_feiyong, R.id.detail_homebtn, R.id.detail_home_jiedan, R.id.detail_home_renwu,R.id.detail_jiedan})
+    @OnClick({R.id.detaild_qi, R.id.detaild_shuqi, R.id.detaild_shushi, R.id.details_wo_fa, R.id.detail_fa_shou, R.id.detail_shuigou, R.id.detail_shui, R.id.detail_feiyong, R.id.detail_homebtn, R.id.detail_home_jiedan, R.id.detail_home_renwu, R.id.detail_jiedan})
     public void onClick(View view) {
         switch (view.getId()) {
 
@@ -156,7 +156,7 @@ public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> im
              * 回到主界面
              */
             case R.id.detail_homebtn:
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
                 finish();
                 break;
             /**
@@ -170,14 +170,14 @@ public class OrderDetailsActivity extends BaseActivity<OrderDetailsPresenter> im
              * 历史任务的界面
              */
             case R.id.detail_home_renwu:
-                startActivity(new Intent(this,HistoryActivity.class));
+                startActivity(new Intent(this, HistoryActivity.class));
                 finish();
                 break;
             /**
              * 本界面的接单
              */
             case R.id.detail_jiedan:
-                ToastUtil.show(this,"等待处理");
+                ToastUtil.show(this, "等待处理");
                 break;
         }
     }

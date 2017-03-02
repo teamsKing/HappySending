@@ -25,7 +25,8 @@ public class MyApplication extends Application {
 
     private ArrayList<Activity> mActivityList;
 
-    public static  SharedPreferences mSp;
+    public static SharedPreferences mSp;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -35,7 +36,7 @@ public class MyApplication extends Application {
         UMShareAPI.get(this);
         Hawk.init(this).build();
         Fresco.initialize(this);
-        mSp =  getSharedPreferences("config", MODE_PRIVATE);
+        mSp = getSharedPreferences("config", MODE_PRIVATE);
     }
 
     //将activity添加进集合
