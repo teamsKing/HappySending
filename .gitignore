@@ -50,8 +50,5 @@ app/src/main/java/com/team/happysending/views/widget/
 /gradle/wrapper/gradle-wrapper.properties
 !/app/build.gradle
 !/.gitignore
-app/src/main/res/drawable-xhdpi/shadow.xml
-app/src/main/res/values/dimen/
-import-summary.txt
-slidelibrary/
+
 slidingmenu/
