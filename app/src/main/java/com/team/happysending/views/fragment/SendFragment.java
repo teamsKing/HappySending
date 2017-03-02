@@ -64,8 +64,6 @@ public class SendFragment extends BaseFragment<SendPresenter> implements SendVie
      */
     @BindView(R.id.quhuoTime)
     TextView mQuhuoTime;
-    @BindView(R.id.fragmentsend_txt32)
-    TextView mFragmentsendTxt32;
     @BindView(R.id.textView4)
     TextView mTextView4;
     @BindView(R.id.fragmentsend_img3)

@@ -216,6 +216,10 @@ public class ContactsActivity extends Activity {
         /**
          * 返回
          */
+        Intent mIntent = new Intent();
+
+        // 设置结果，并进行传送
+        setResult(RESULT_OK, mIntent);
         finish();
     }
 
