@@ -50,3 +50,5 @@ app/src/main/java/com/team/happysending/views/widget/
 /gradle/wrapper/gradle-wrapper.properties
 !/app/build.gradle
 !/.gitignore
+
+slidingmenu/
