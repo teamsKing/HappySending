@@ -2,6 +2,8 @@ package com.team.happysending.views.activity;
 
 import android.content.Intent;
 import android.os.Environment;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 
 import com.team.happysending.R;
 import com.team.happysending.presenter.PlaceAnOrderPresenter;
+import com.team.happysending.utils.ToastUtil;
 import com.team.happysending.utils.ToastUtils;
 import com.team.happysending.views.interfaces.PlaceAnOrderView;
 
@@ -90,6 +93,7 @@ public class PlaceAnOrderActivity extends BaseActivity<PlaceAnOrderPresenter> im
         FileName = Environment.getExternalStorageDirectory().getAbsolutePath();
         FileName += "/beizhu+" + str + ".3gp";
         mPlaceonorderImgYuYin.setOnTouchListener(this);
+
     }
 
 
@@ -182,6 +186,28 @@ public class PlaceAnOrderActivity extends BaseActivity<PlaceAnOrderPresenter> im
                 mPresenter.showMoneyPopup(mPlaceonorderTiJiaoBtn);
                 break;
             case R.id.placeonorder_tiJiaoBtn:
+                String FaName = mPlaceonorderEtFaName.getText().toString().trim();
+                String ShouName = mPlaceonorderEtShouName.getText().toString().trim();
+
+                String XuanZe = mPlaceonorderXuanZe.getText().toString().trim();
+                String BeiZhu = mPlaceonorderTextBeiZhu.getText().toString().trim();
+                String Money = mPlaceonorderMoney.getText().toString().trim();
+
+                if(TextUtils.isEmpty(FaName)){
+                    ToastUtil.show(this,"发货人不能为空");
+                }else if(TextUtils.isEmpty(ShouName)){
+                    ToastUtil.show(this,"收货人不能为空");
+                }else if(TextUtils.isEmpty(BeiZhu)){
+                    ToastUtil.show(this,"备注不能为空");
+                }else if(!TextUtils.isEmpty(FaName)&&!TextUtils.isEmpty(ShouName)){
+                    Intent intent1  = new  Intent(this,OrdersActivity.class);
+                    intent1.putExtra("XuanZe",XuanZe);
+                    intent1.putExtra("BeiZhu",BeiZhu);
+                    intent1.putExtra("Money",Money);
+                    startActivity(intent1);
+                    finish();
+                }
+
                 break;
             case R.id.placeonorder_imgYuYinLong:
                 /**
@@ -211,7 +237,7 @@ public class PlaceAnOrderActivity extends BaseActivity<PlaceAnOrderPresenter> im
      */
     @Override
     public void onGetMoney(int num) {
-        mPlaceonorderMoney.setText("配送费：\r\r"+num+"元");
+        mPlaceonorderMoney.setText(num+"元");
     }
 
     /**

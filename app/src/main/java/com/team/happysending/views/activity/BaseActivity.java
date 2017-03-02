@@ -9,6 +9,7 @@ import com.team.happysending.model.net.ActivityLifeCycleEvent;
 import com.team.happysending.presenter.BasePresenter;
 import com.team.happysending.views.app.MyApplication;
 import com.team.happysending.views.interfaces.BaseView;
+import com.tencent.tauth.Tencent;
 
 import butterknife.ButterKnife;
 import io.reactivex.subjects.PublishSubject;
@@ -25,6 +26,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected T mPresenter;
     protected SharedPreferences mSp;
     protected SharedPreferences.Editor editor;
+    protected Tencent mTencent;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
         mSp = getSharedPreferences("congif", MODE_PRIVATE);
         editor = mSp.edit();
+        mTencent = Tencent.createInstance("1106010890", this.getApplicationContext());
 
         //注册接口
         BaseView baseInterface = initCallBack();

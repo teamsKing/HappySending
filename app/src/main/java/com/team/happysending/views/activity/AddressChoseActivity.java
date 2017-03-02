@@ -12,9 +12,10 @@ import com.team.happysending.views.interfaces.BaseView;
 
 public class AddressChoseActivity extends BaseActivity<AddressChosePresenter> implements AddressChoseView {
 
+
     @Override
     protected int getLayout() {
-        return R.layout.activity_addresschose;
+        return R.layout.activity_city_selecter;
     }
 
     @Override
