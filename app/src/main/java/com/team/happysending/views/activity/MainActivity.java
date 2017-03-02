@@ -1,6 +1,7 @@
 package com.team.happysending.views.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -42,12 +43,18 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     private RelativeLayout mRelative;
     private static final int REQUEST_CODE_PICK_CITY = 0;
     private TextView mCityName;
+    private ImageView slidingimageView;
+    private TextView slidingname;
+    private TextView slidingsex;
+    private TextView slidingcity;
+    private TextView slidingprovince;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initUI();
+
         //实例化菜单控件
         SlidingMenu slidingMenu = new SlidingMenu(this);
         //设置相关属性
@@ -58,6 +65,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         slidingMenu.setMenu(R.layout.right_menu);
         //设置透明度
         slidingMenu.setOffsetFadeDegree(0.4f);
+        slidingimageView = (ImageView) findViewById(R.id.sliding_image);
+        slidingname = (TextView) findViewById(R.id.sliding_name);
+        slidingsex = (TextView) findViewById(R.id.sliding_sex);
+        slidingcity = (TextView) findViewById(R.id.sliding_city);
+        slidingprovince = (TextView) findViewById(R.id.sliding_province);
+
 
     }
 
@@ -69,6 +82,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
             image.setVisibility(View.GONE);
             logintext.setVisibility(View.VISIBLE);
         } else {
+            Uri uri = Uri.parse(getIntent().getStringExtra("iconurl"));
+            slidingimageView.setImageURI(uri);
+            slidingname.setText(getIntent().getStringExtra("name"));
+            slidingsex.setText(getIntent().getStringExtra("gender"));
+            slidingcity.setText(getIntent().getStringExtra("city"));
+            slidingprovince.setText(getIntent().getStringExtra("province"));
             image.setVisibility(View.VISIBLE);
             logintext.setVisibility(View.GONE);
         }

@@ -124,10 +124,21 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         @Override
         public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+            String name = data.get("name");
+            String gender = data.get("gender");
+            String iconurl = data.get("iconurl");
+            String city = data.get("city");
+            String province = data.get("province");
             Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
             editor.putString(Constant.LOGINTOKEN, "accessToken ");
             editor.commit();
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("gender", gender);
+            intent.putExtra("iconurl", iconurl);
+            intent.putExtra("city", city);
+            intent.putExtra("province", province);
+            startActivity(intent);
             finish();
 
         }

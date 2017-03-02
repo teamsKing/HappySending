@@ -16,9 +16,6 @@ import android.widget.TextView;
 
 import com.shitou.googleplay.lib.randomlayout.StellarMap;
 import com.team.happysending.R;
-import com.team.happysending.presenter.HelpMeToHandPresenter;
-import com.team.happysending.views.interfaces.BaseView;
-import com.team.happysending.views.interfaces.HelpMeToHandInterface;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -79,6 +76,7 @@ import java.util.Random;
                         yy.setVisibility(View.VISIBLE);
                         jp.setVisibility(View.GONE);
                         t.setText("键盘");
+
                         try {
                             //获取输入法的服务
                             InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);

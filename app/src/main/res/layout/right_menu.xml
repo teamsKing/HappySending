@@ -2,12 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0000"
+    android:background="@drawable/homepage"
     android:orientation="vertical">
 
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sliding_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_launcher" />
+
     <TextView
+        android:id="@+id/sliding_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:text="我是侧滑菜单" />
+        android:text="姓名"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/sliding_sex"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="性别"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/sliding_city"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="城市"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/sliding_province"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="省份"
+        android:textSize="25sp" />
+
 </LinearLayout>
